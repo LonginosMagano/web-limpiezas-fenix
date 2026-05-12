@@ -1,4 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://limpiezaincendiosfenix.es/</loc><priority>1.0</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/</loc><priority>1.0</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/servicios/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/madrid/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/alcobendas/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/getafe/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/leganes/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/mostoles/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/servicios/limpieza-tras-incendio/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/servicios/limpieza-hollin/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/servicios/eliminacion-olor-humo/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/servicios/limpieza-casas-quemadas/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/madrid/limpieza-tras-incendio/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/madrid/limpieza-hollin/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/madrid/eliminacion-olor-humo/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/madrid/limpieza-casas-quemadas/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/alcobendas/limpieza-tras-incendio/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/alcobendas/limpieza-hollin/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/alcobendas/eliminacion-olor-humo/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/alcobendas/limpieza-casas-quemadas/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/getafe/limpieza-tras-incendio/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/getafe/limpieza-hollin/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/getafe/eliminacion-olor-humo/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/getafe/limpieza-casas-quemadas/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/leganes/limpieza-tras-incendio/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/leganes/limpieza-hollin/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/leganes/eliminacion-olor-humo/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/leganes/limpieza-casas-quemadas/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/mostoles/limpieza-tras-incendio/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/mostoles/limpieza-hollin/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/mostoles/eliminacion-olor-humo/</loc><priority>0.75</priority></url>
+  <url><loc>https://longinosmagano.github.io/web-limpiezas-fenix/ciudades/mostoles/limpieza-casas-quemadas/</loc><priority>0.75</priority></url>
 </urlset>
