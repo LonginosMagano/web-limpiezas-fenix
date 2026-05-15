@@ -17,7 +17,7 @@ const schemaBreadcrumb = {
 };
 
 const CATEGORY_COLORS: Record<string, string> = {
-  Guías: "var(--fire)",
+  Guías: "var(--cyan)",
   Técnicas: "var(--gold)",
   Tecnología: "#4fc3f7",
   Seguros: "var(--green)",
@@ -39,18 +39,18 @@ export default function BlogIndex() {
           <nav className="breadcrumb" style={{ marginBottom: "1.5rem" }}>
             <Link href="/">Inicio</Link>
             <span className="breadcrumb-sep">›</span>
-            <span style={{ color: "var(--ember)" }}>Blog</span>
+            <span style={{ color: "var(--cyan)" }}>Blog</span>
           </nav>
-          <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(2.5rem, 4vw, 3.5rem)", color: "var(--light)", marginBottom: "0.75rem" }}>
-            Blog sobre <span style={{ color: "var(--fire)" }}>Limpieza por Incendio</span>
+          <h1 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(2.5rem, 4vw, 3.5rem)", color: "var(--white)", marginBottom: "0.75rem" }}>
+            Blog sobre <span style={{ color: "var(--cyan)" }}>Limpieza por Incendio</span>
           </h1>
-          <p style={{ color: "var(--gray)", fontSize: "1.05rem", maxWidth: "600px" }}>
+          <p style={{ color: "var(--mist)", fontSize: "1.05rem", maxWidth: "600px" }}>
             Guías prácticas, consejos técnicos y todo lo que necesitas saber sobre la recuperación de inmuebles tras un siniestro por incendio.
           </p>
         </div>
       </section>
 
-      <section style={{ padding: "4rem 0", background: "var(--coal)" }}>
+      <section style={{ padding: "4rem 0", background: "var(--navy2)" }}>
         <div className="container">
           <div className="blog-grid-2col" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "2rem" }}>
             {BLOG_POSTS.map((post, i) => (
@@ -90,7 +90,7 @@ export default function BlogIndex() {
                     />
                     <div style={{ position: "absolute", top: "1rem", left: "1rem" }}>
                       <span style={{
-                        background: CATEGORY_COLORS[post.category] || "var(--fire)",
+                        background: CATEGORY_COLORS[post.category] || "var(--cyan)",
                         color: "#000",
                         fontSize: "0.75rem",
                         fontWeight: 700,
@@ -110,13 +110,13 @@ export default function BlogIndex() {
                       <span>·</span>
                       <span>{post.readTime} de lectura</span>
                     </div>
-                    <h2 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "var(--light)", marginBottom: "0.75rem", lineHeight: 1.4 }}>
+                    <h2 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "var(--white)", marginBottom: "0.75rem", lineHeight: 1.4 }}>
                       {post.title}
                     </h2>
-                    <p style={{ color: "var(--gray)", fontSize: "0.9rem", lineHeight: 1.65, flex: 1 }}>
+                    <p style={{ color: "var(--mist)", fontSize: "0.9rem", lineHeight: 1.65, flex: 1 }}>
                       {post.excerpt}
                     </p>
-                    <div style={{ marginTop: "1.25rem", color: "var(--ember)", fontSize: "0.9rem", fontWeight: 600 }}>
+                    <div style={{ marginTop: "1.25rem", color: "var(--cyan)", fontSize: "0.9rem", fontWeight: 600 }}>
                       Leer artículo →
                     </div>
                   </div>

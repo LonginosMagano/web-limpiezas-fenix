@@ -84,26 +84,26 @@ export default function BlogArticle({ slug }: { slug: string }) {
             <span className="breadcrumb-sep">›</span>
             <Link href="/blog/">Blog</Link>
             <span className="breadcrumb-sep">›</span>
-            <span style={{ color: "var(--ember)", maxWidth: "300px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{post.title}</span>
+            <span style={{ color: "var(--cyan)", maxWidth: "300px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{post.title}</span>
           </nav>
           <div style={{ maxWidth: "760px" }}>
             <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem", fontSize: "0.85rem", color: "var(--muted-text)", flexWrap: "wrap" }}>
-              <span style={{ background: "rgba(255,69,0,0.15)", color: "var(--ember)", padding: "0.2rem 0.6rem", borderRadius: "999px", fontWeight: 600 }}>
+              <span style={{ background: "rgba(255,69,0,0.15)", color: "var(--cyan)", padding: "0.2rem 0.6rem", borderRadius: "999px", fontWeight: 600 }}>
                 {post.category}
               </span>
               <span>{new Date(post.date).toLocaleDateString("es-ES", { year: "numeric", month: "long", day: "numeric" })}</span>
               <span>·</span>
               <span>{post.readTime} de lectura</span>
             </div>
-            <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--light)", lineHeight: 1.15, marginBottom: "1rem" }}>
+            <h1 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--white)", lineHeight: 1.15, marginBottom: "1rem" }}>
               {post.title}
             </h1>
-            <p style={{ fontSize: "1.1rem", color: "var(--gray)", lineHeight: 1.7 }}>{post.excerpt}</p>
+            <p style={{ fontSize: "1.1rem", color: "var(--mist)", lineHeight: 1.7 }}>{post.excerpt}</p>
           </div>
         </div>
       </section>
 
-      <section style={{ padding: "3rem 0 5rem", background: "var(--coal)" }}>
+      <section style={{ padding: "3rem 0 5rem", background: "var(--navy2)" }}>
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 300px", gap: "3rem", alignItems: "start" }}>
             {/* Contenido del artículo */}
@@ -116,13 +116,13 @@ export default function BlogArticle({ slug }: { slug: string }) {
             <aside className="blog-sidebar" style={{ position: "sticky", top: "90px" }}>
               {/* CTA */}
               <div style={{ background: "rgba(255,69,0,0.08)", border: "1px solid rgba(255,69,0,0.2)", borderRadius: "0.5rem", padding: "1.5rem", marginBottom: "1.5rem" }}>
-                <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.3rem", color: "var(--fire)", marginBottom: "0.5rem" }}>
+                <div style={{ fontFamily: "'Syne', sans-serif", fontSize: "1.3rem", color: "var(--cyan)", marginBottom: "0.5rem" }}>
                   ¿Necesitas ayuda urgente?
                 </div>
-                <p style={{ color: "var(--gray)", fontSize: "0.88rem", marginBottom: "1rem", lineHeight: 1.6 }}>
+                <p style={{ color: "var(--mist)", fontSize: "0.88rem", marginBottom: "1rem", lineHeight: 1.6 }}>
                   Servicio de limpieza por incendio 24h/365. Valoración gratuita.
                 </p>
-                <a href="tel:900XXXXXX" className="btn-fire" style={{ width: "100%", justifyContent: "center", marginBottom: "0.5rem" }}>
+                <a href="tel:900XXXXXX" className="btn-cyan" style={{ width: "100%", justifyContent: "center", marginBottom: "0.5rem" }}>
                   ☎ Llamar ahora
                 </a>
                 <a href="https://wa.me/34900XXXXXX" className="btn-wa" style={{ width: "100%", justifyContent: "center" }} target="_blank" rel="noopener noreferrer">
@@ -132,14 +132,14 @@ export default function BlogArticle({ slug }: { slug: string }) {
 
               {/* Artículos relacionados */}
               <div style={{ background: "var(--ash)", border: "1px solid var(--border-subtle)", borderRadius: "0.5rem", padding: "1.5rem" }}>
-                <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.2rem", color: "var(--light)", marginBottom: "1rem" }}>
+                <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: "1.2rem", color: "var(--white)", marginBottom: "1rem" }}>
                   Artículos relacionados
                 </h3>
                 <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                   {otherPosts.map((p) => (
                     <Link key={p.slug} href={`/blog/${p.slug}/`}>
                       <div style={{ cursor: "pointer" }}>
-                        <div style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--light)", lineHeight: 1.4, marginBottom: "0.25rem" }}>{p.title}</div>
+                        <div style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--white)", lineHeight: 1.4, marginBottom: "0.25rem" }}>{p.title}</div>
                         <div style={{ fontSize: "0.78rem", color: "var(--muted-text)" }}>{p.readTime} de lectura</div>
                       </div>
                     </Link>

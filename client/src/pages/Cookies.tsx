@@ -19,15 +19,15 @@ export default function Cookies() {
           <nav className="breadcrumb" style={{ marginBottom: "1.5rem" }}>
             <Link href="/">Inicio</Link>
             <span className="breadcrumb-sep">›</span>
-            <span style={{ color: "var(--ember)" }}>Política de Cookies</span>
+            <span style={{ color: "var(--cyan)" }}>Política de Cookies</span>
           </nav>
-          <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "2.5rem", color: "var(--light)", marginBottom: "0.5rem" }}>
-            Política de <span style={{ color: "var(--fire)" }}>Cookies</span>
+          <h1 style={{ fontFamily: "'Syne', sans-serif", fontSize: "2.5rem", color: "var(--white)", marginBottom: "0.5rem" }}>
+            Política de <span style={{ color: "var(--cyan)" }}>Cookies</span>
           </h1>
           <p style={{ color: "var(--muted-text)", fontSize: "0.85rem" }}>Última actualización: enero de 2025</p>
         </div>
       </section>
-      <section style={{ padding: "3rem 0 5rem", background: "var(--coal)" }}>
+      <section style={{ padding: "3rem 0 5rem", background: "var(--navy2)" }}>
         <div className="container">
           <div className="legal-content" style={{ maxWidth: "760px" }}>
             <h2>¿Qué son las cookies?</h2>
@@ -40,16 +40,16 @@ export default function Cookies() {
             <table style={{ width: "100%", borderCollapse: "collapse", marginBottom: "1.5rem" }}>
               <thead>
                 <tr style={{ background: "var(--ash2)" }}>
-                  <th style={{ padding: "0.6rem 0.75rem", textAlign: "left", color: "var(--light)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>Cookie</th>
-                  <th style={{ padding: "0.6rem 0.75rem", textAlign: "left", color: "var(--light)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>Finalidad</th>
-                  <th style={{ padding: "0.6rem 0.75rem", textAlign: "left", color: "var(--light)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>Duración</th>
+                  <th style={{ padding: "0.6rem 0.75rem", textAlign: "left", color: "var(--white)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>Cookie</th>
+                  <th style={{ padding: "0.6rem 0.75rem", textAlign: "left", color: "var(--white)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>Finalidad</th>
+                  <th style={{ padding: "0.6rem 0.75rem", textAlign: "left", color: "var(--white)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>Duración</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style={{ padding: "0.6rem 0.75rem", color: "var(--gray)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>fenix_cookies</td>
-                  <td style={{ padding: "0.6rem 0.75rem", color: "var(--gray)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>Guarda la preferencia de aceptación de cookies</td>
-                  <td style={{ padding: "0.6rem 0.75rem", color: "var(--gray)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>1 año</td>
+                  <td style={{ padding: "0.6rem 0.75rem", color: "var(--mist)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>fenix_cookies</td>
+                  <td style={{ padding: "0.6rem 0.75rem", color: "var(--mist)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>Guarda la preferencia de aceptación de cookies</td>
+                  <td style={{ padding: "0.6rem 0.75rem", color: "var(--mist)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>1 año</td>
                 </tr>
               </tbody>
             </table>
@@ -59,16 +59,16 @@ export default function Cookies() {
             <table style={{ width: "100%", borderCollapse: "collapse", marginBottom: "1.5rem" }}>
               <thead>
                 <tr style={{ background: "var(--ash2)" }}>
-                  <th style={{ padding: "0.6rem 0.75rem", textAlign: "left", color: "var(--light)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>Cookie</th>
-                  <th style={{ padding: "0.6rem 0.75rem", textAlign: "left", color: "var(--light)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>Proveedor</th>
-                  <th style={{ padding: "0.6rem 0.75rem", textAlign: "left", color: "var(--light)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>Duración</th>
+                  <th style={{ padding: "0.6rem 0.75rem", textAlign: "left", color: "var(--white)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>Cookie</th>
+                  <th style={{ padding: "0.6rem 0.75rem", textAlign: "left", color: "var(--white)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>Proveedor</th>
+                  <th style={{ padding: "0.6rem 0.75rem", textAlign: "left", color: "var(--white)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>Duración</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style={{ padding: "0.6rem 0.75rem", color: "var(--gray)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>_ga, _gid</td>
-                  <td style={{ padding: "0.6rem 0.75rem", color: "var(--gray)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>Google Analytics</td>
-                  <td style={{ padding: "0.6rem 0.75rem", color: "var(--gray)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>2 años / 24h</td>
+                  <td style={{ padding: "0.6rem 0.75rem", color: "var(--mist)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>_ga, _gid</td>
+                  <td style={{ padding: "0.6rem 0.75rem", color: "var(--mist)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>Google Analytics</td>
+                  <td style={{ padding: "0.6rem 0.75rem", color: "var(--mist)", fontSize: "0.85rem", border: "1px solid var(--border-subtle)" }}>2 años / 24h</td>
                 </tr>
               </tbody>
             </table>
@@ -76,9 +76,9 @@ export default function Cookies() {
             <h2>Cómo gestionar las cookies</h2>
             <p>Puedes gestionar las cookies a través de la configuración de tu navegador. Ten en cuenta que deshabilitar algunas cookies puede afectar al funcionamiento del sitio web.</p>
             <ul>
-              <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" style={{ color: "var(--ember)" }}>Google Chrome</a></li>
-              <li><a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank" rel="noopener noreferrer" style={{ color: "var(--ember)" }}>Mozilla Firefox</a></li>
-              <li><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer" style={{ color: "var(--ember)" }}>Safari</a></li>
+              <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" style={{ color: "var(--cyan)" }}>Google Chrome</a></li>
+              <li><a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank" rel="noopener noreferrer" style={{ color: "var(--cyan)" }}>Mozilla Firefox</a></li>
+              <li><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer" style={{ color: "var(--cyan)" }}>Safari</a></li>
             </ul>
 
             <h2>Más información</h2>

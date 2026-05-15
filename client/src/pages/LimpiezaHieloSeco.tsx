@@ -40,7 +40,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
     <div className="faq-item">
       <button className="faq-question" onClick={() => setOpen(!open)} aria-expanded={open}>
         <span>{q}</span>
-        <span style={{ color: "var(--fire)", fontSize: "1.2rem", flexShrink: 0, transition: "transform 250ms", transform: open ? "rotate(45deg)" : "rotate(0)" }}>+</span>
+        <span style={{ color: "var(--cyan)", fontSize: "1.2rem", flexShrink: 0, transition: "transform 250ms", transform: open ? "rotate(45deg)" : "rotate(0)" }}>+</span>
       </button>
       <div className={`faq-answer${open ? " open" : ""}`}>
         <div className="faq-answer-inner">{a}</div>
@@ -66,21 +66,21 @@ export default function LimpiezaHieloSeco() {
             <span className="breadcrumb-sep">›</span>
             <Link href="/limpieza-por-incendio/">Limpieza por Incendio</Link>
             <span className="breadcrumb-sep">›</span>
-            <span style={{ color: "var(--ember)" }}>Limpieza con Hielo Seco</span>
+            <span style={{ color: "var(--cyan)" }}>Limpieza con Hielo Seco</span>
           </nav>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 400px", gap: "3rem", alignItems: "start" }}>
             <div>
               <span className="badge-fire" style={{ marginBottom: "1rem", display: "inline-flex" }}>❄️ Tecnología criogénica</span>
-              <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(2.5rem, 4.5vw, 4rem)", color: "var(--light)", marginBottom: "1.25rem" }}>
+              <h1 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(2.5rem, 4.5vw, 4rem)", color: "var(--white)", marginBottom: "1.25rem" }}>
                 Limpieza con<br />
-                <span style={{ color: "var(--fire)" }}>Hielo Seco</span><br />
+                <span style={{ color: "var(--cyan)" }}>Hielo Seco</span><br />
                 por Incendio
               </h1>
-              <p style={{ fontSize: "1.05rem", color: "var(--gray)", lineHeight: 1.75, marginBottom: "1.5rem" }}>
+              <p style={{ fontSize: "1.05rem", color: "var(--mist)", lineHeight: 1.75, marginBottom: "1.5rem" }}>
                 Sin agua. Sin residuos. Sin parar la producción. La limpieza con hielo seco (CO₂) es la solución ideal para maquinaria industrial, cuadros eléctricos y equipos que no pueden mojarse ni desmontarse.
               </p>
               <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-                <a href="tel:900XXXXXX" className="btn-fire">☎ Llamar ahora</a>
+                <a href="tel:900XXXXXX" className="btn-cyan">☎ Llamar ahora</a>
                 <a href="https://wa.me/34900XXXXXX" className="btn-wa" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
               </div>
             </div>
@@ -91,7 +91,7 @@ export default function LimpiezaHieloSeco() {
         </div>
       </section>
 
-      <section style={{ padding: "4rem 0", background: "var(--coal)" }}>
+      <section style={{ padding: "4rem 0", background: "var(--navy2)" }}>
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "center", marginBottom: "4rem" }}>
             <div>
@@ -105,7 +105,7 @@ export default function LimpiezaHieloSeco() {
               />
             </div>
             <div>
-              <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "2.2rem", color: "var(--light)", marginBottom: "1rem" }}>
+              <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "2.2rem", color: "var(--white)", marginBottom: "1rem" }}>
                 Ventajas del hielo seco
               </h2>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.85rem" }}>
@@ -117,7 +117,7 @@ export default function LimpiezaHieloSeco() {
                   { icon: "🌿", text: "Ecológico: no utiliza productos químicos" },
                   { icon: "⏱️", text: "Rápido: reduce el tiempo de parada al mínimo" },
                 ].map((item) => (
-                  <li key={item.text} style={{ display: "flex", gap: "0.75rem", color: "var(--gray)", fontSize: "0.95rem", alignItems: "flex-start" }}>
+                  <li key={item.text} style={{ display: "flex", gap: "0.75rem", color: "var(--mist)", fontSize: "0.95rem", alignItems: "flex-start" }}>
                     <span style={{ fontSize: "1.1rem", flexShrink: 0 }}>{item.icon}</span>
                     {item.text}
                   </li>
@@ -126,7 +126,7 @@ export default function LimpiezaHieloSeco() {
             </div>
           </div>
 
-          <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "2.2rem", color: "var(--light)", marginBottom: "1.5rem" }}>
+          <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "2.2rem", color: "var(--white)", marginBottom: "1.5rem" }}>
             Aplicaciones industriales
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.25rem", marginBottom: "3rem" }}>
@@ -140,13 +140,13 @@ export default function LimpiezaHieloSeco() {
             ].map((item) => (
               <div key={item.title} className="service-card">
                 <div style={{ fontSize: "2rem", marginBottom: "0.75rem" }}>{item.icon}</div>
-                <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: "1rem", color: "var(--light)", marginBottom: "0.4rem" }}>{item.title}</h3>
-                <p style={{ color: "var(--gray)", fontSize: "0.88rem", lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
+                <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: "1rem", color: "var(--white)", marginBottom: "0.4rem" }}>{item.title}</h3>
+                <p style={{ color: "var(--mist)", fontSize: "0.88rem", lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
               </div>
             ))}
           </div>
 
-          <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "2.2rem", color: "var(--light)", marginBottom: "1.5rem" }}>
+          <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "2.2rem", color: "var(--white)", marginBottom: "1.5rem" }}>
             Preguntas frecuentes
           </h2>
           {FAQS.map((faq) => (

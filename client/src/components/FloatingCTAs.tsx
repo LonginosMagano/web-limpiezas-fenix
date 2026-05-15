@@ -14,7 +14,7 @@ export default function FloatingCTAs() {
           title="Llamar ahora"
           aria-label="Llamar a Limpiezas Fénix"
         >
-          🔥
+          ☎
         </a>
         <a
           href="https://wa.me/34900XXXXXX?text=Hola%2C%20necesito%20ayuda%20urgente%20tras%20un%20incendio"

@@ -28,7 +28,7 @@ import NotFound from "./pages/NotFound";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", background: "var(--coal)" }}>
+    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", background: "var(--navy2)" }}>
       <Header />
       <main style={{ flex: 1 }}>
         {children}

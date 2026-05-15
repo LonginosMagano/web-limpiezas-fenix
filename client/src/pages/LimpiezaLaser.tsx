@@ -40,7 +40,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
     <div className="faq-item">
       <button className="faq-question" onClick={() => setOpen(!open)} aria-expanded={open}>
         <span>{q}</span>
-        <span style={{ color: "var(--fire)", fontSize: "1.2rem", flexShrink: 0, transition: "transform 250ms", transform: open ? "rotate(45deg)" : "rotate(0)" }}>+</span>
+        <span style={{ color: "var(--cyan)", fontSize: "1.2rem", flexShrink: 0, transition: "transform 250ms", transform: open ? "rotate(45deg)" : "rotate(0)" }}>+</span>
       </button>
       <div className={`faq-answer${open ? " open" : ""}`}>
         <div className="faq-answer-inner">{a}</div>
@@ -66,19 +66,19 @@ export default function LimpiezaLaser() {
             <span className="breadcrumb-sep">›</span>
             <Link href="/limpieza-por-incendio/">Limpieza por Incendio</Link>
             <span className="breadcrumb-sep">›</span>
-            <span style={{ color: "var(--ember)" }}>Limpieza Láser</span>
+            <span style={{ color: "var(--cyan)" }}>Limpieza Láser</span>
           </nav>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 400px", gap: "3rem", alignItems: "start" }}>
             <div>
               <span className="badge-fire" style={{ marginBottom: "1rem", display: "inline-flex" }}>🔬 Tecnología avanzada</span>
-              <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(2.5rem, 4.5vw, 4rem)", color: "var(--light)", marginBottom: "1.25rem" }}>
-                Limpieza <span style={{ color: "var(--fire)" }}>Láser</span><br />por Incendio
+              <h1 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(2.5rem, 4.5vw, 4rem)", color: "var(--white)", marginBottom: "1.25rem" }}>
+                Limpieza <span style={{ color: "var(--cyan)" }}>Láser</span><br />por Incendio
               </h1>
-              <p style={{ fontSize: "1.05rem", color: "var(--gray)", lineHeight: 1.75, marginBottom: "1.5rem" }}>
+              <p style={{ fontSize: "1.05rem", color: "var(--mist)", lineHeight: 1.75, marginBottom: "1.5rem" }}>
                 La tecnología láser permite eliminar hollín y residuos de combustión con una precisión milimétrica, sin dañar la superficie subyacente y sin necesidad de productos químicos. Ideal para piedra, ladrillo, madera, metal y patrimonio histórico.
               </p>
               <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-                <a href="tel:900XXXXXX" className="btn-fire">☎ Llamar ahora</a>
+                <a href="tel:900XXXXXX" className="btn-cyan">☎ Llamar ahora</a>
                 <a href="https://wa.me/34900XXXXXX" className="btn-wa" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
               </div>
             </div>
@@ -89,17 +89,17 @@ export default function LimpiezaLaser() {
         </div>
       </section>
 
-      <section style={{ padding: "4rem 0", background: "var(--coal)" }}>
+      <section style={{ padding: "4rem 0", background: "var(--navy2)" }}>
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "center", marginBottom: "4rem" }}>
             <div>
-              <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "2.2rem", color: "var(--light)", marginBottom: "1rem" }}>
+              <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "2.2rem", color: "var(--white)", marginBottom: "1rem" }}>
                 ¿Cómo funciona la limpieza láser?
               </h2>
-              <p style={{ color: "var(--gray)", lineHeight: 1.8, marginBottom: "1.25rem" }}>
+              <p style={{ color: "var(--mist)", lineHeight: 1.8, marginBottom: "1.25rem" }}>
                 El láser de limpieza emite pulsos de luz de alta energía que son absorbidos por la capa de hollín y residuos de combustión. Esta energía vaporiza instantáneamente los contaminantes sin afectar al material subyacente, que refleja la energía láser.
               </p>
-              <p style={{ color: "var(--gray)", lineHeight: 1.8 }}>
+              <p style={{ color: "var(--mist)", lineHeight: 1.8 }}>
                 El proceso es completamente en seco, sin agua ni productos químicos, lo que lo hace ideal para superficies sensibles a la humedad y para entornos donde no se puede generar residuos líquidos.
               </p>
             </div>
@@ -115,7 +115,7 @@ export default function LimpiezaLaser() {
             </div>
           </div>
 
-          <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "2.2rem", color: "var(--light)", marginBottom: "1.5rem" }}>
+          <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "2.2rem", color: "var(--white)", marginBottom: "1.5rem" }}>
             Casos de uso
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.25rem", marginBottom: "3rem" }}>
@@ -129,13 +129,13 @@ export default function LimpiezaLaser() {
             ].map((item) => (
               <div key={item.title} className="service-card">
                 <div style={{ fontSize: "2rem", marginBottom: "0.75rem" }}>{item.icon}</div>
-                <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: "1rem", color: "var(--light)", marginBottom: "0.4rem" }}>{item.title}</h3>
-                <p style={{ color: "var(--gray)", fontSize: "0.88rem", lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
+                <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: "1rem", color: "var(--white)", marginBottom: "0.4rem" }}>{item.title}</h3>
+                <p style={{ color: "var(--mist)", fontSize: "0.88rem", lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
               </div>
             ))}
           </div>
 
-          <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "2.2rem", color: "var(--light)", marginBottom: "1.5rem" }}>
+          <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "2.2rem", color: "var(--white)", marginBottom: "1.5rem" }}>
             Preguntas frecuentes
           </h2>
           {FAQS.map((faq) => (

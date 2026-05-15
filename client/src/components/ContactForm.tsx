@@ -1,6 +1,6 @@
 /*
- * ContactForm — Limpiezas Fénix
- * Formulario de contacto con fetch() sin recarga, validación inline
+ * ContactForm — Limpiezas Fénix v2 "Tecnología y Confianza"
+ * Paleta: Azul petróleo + Cian eléctrico + Verde esmeralda
  */
 
 import { useState } from "react";
@@ -8,10 +8,9 @@ import { useState } from "react";
 interface ContactFormProps {
   title?: string;
   subtitle?: string;
-  dark?: boolean;
 }
 
-export default function ContactForm({ title, subtitle, dark = true }: ContactFormProps) {
+export default function ContactForm({ title, subtitle }: ContactFormProps) {
   const [status, setStatus] = useState<"idle" | "loading" | "ok" | "error">("idle");
   const [form, setForm] = useState({ nombre: "", poblacion: "", telefono: "" });
 
@@ -39,37 +38,31 @@ export default function ContactForm({ title, subtitle, dark = true }: ContactFor
     }
   }
 
-  const bg = dark ? "rgba(255,255,255,0.04)" : "rgba(0,0,0,0.04)";
-  const borderColor = dark ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.12)";
-  const textColor = dark ? "var(--light)" : "#1a1a1a";
-  const placeholderStyle = dark ? "rgba(242,237,228,0.35)" : "rgba(0,0,0,0.35)";
-
   return (
     <div>
       {title && (
-        <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.8rem", color: dark ? "var(--light)" : "#1a1a1a", marginBottom: "0.25rem", letterSpacing: "0.03em" }}>
+        <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: "1.3rem", fontWeight: 800, color: "var(--white)", marginBottom: "0.25rem" }}>
           {title}
         </h3>
       )}
       {subtitle && (
-        <p style={{ color: dark ? "var(--gray)" : "rgba(0,0,0,0.55)", fontSize: "0.95rem", marginBottom: "1.25rem" }}>
+        <p style={{ color: "var(--ghost)", fontSize: "0.85rem", marginBottom: "1.25rem", fontFamily: "'Outfit', sans-serif" }}>
           {subtitle}
         </p>
       )}
 
       {status === "ok" ? (
         <div style={{
-          background: "rgba(40,199,111,0.12)",
-          border: "1px solid rgba(40,199,111,0.3)",
-          borderRadius: "0.5rem",
+          background: "rgba(0,230,118,0.08)",
+          border: "1px solid rgba(0,230,118,0.3)",
+          borderRadius: "0.75rem",
           padding: "1.5rem",
           textAlign: "center",
-          color: "var(--green)"
         }}>
-          <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>✓</div>
-          <strong>¡Solicitud recibida!</strong>
-          <p style={{ margin: "0.5rem 0 0", fontSize: "0.95rem", color: dark ? "var(--gray)" : "rgba(0,0,0,0.6)" }}>
-            Nos pondremos en contacto contigo en menos de 24 horas para valorar tu caso sin compromiso.
+          <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>✅</div>
+          <strong style={{ color: "var(--green)", fontFamily: "'Syne', sans-serif" }}>¡Solicitud recibida!</strong>
+          <p style={{ margin: "0.5rem 0 0", fontSize: "0.9rem", color: "var(--mist)", fontFamily: "'Outfit', sans-serif" }}>
+            Nos pondremos en contacto contigo en menos de 24 horas.
           </p>
         </div>
       ) : (
@@ -82,7 +75,6 @@ export default function ContactForm({ title, subtitle, dark = true }: ContactFor
             autoComplete="name"
             value={form.nombre}
             onChange={handleChange}
-            style={{ background: bg, borderColor, color: textColor }}
           />
           <input
             type="text"
@@ -92,7 +84,6 @@ export default function ContactForm({ title, subtitle, dark = true }: ContactFor
             autoComplete="address-level2"
             value={form.poblacion}
             onChange={handleChange}
-            style={{ background: bg, borderColor, color: textColor }}
           />
           <input
             type="tel"
@@ -102,26 +93,25 @@ export default function ContactForm({ title, subtitle, dark = true }: ContactFor
             autoComplete="tel"
             value={form.telefono}
             onChange={handleChange}
-            style={{ background: bg, borderColor, color: textColor }}
           />
 
           {status === "error" && (
-            <p style={{ color: "var(--fire)", fontSize: "0.9rem", margin: 0 }}>
+            <p style={{ color: "#FF6B6B", fontSize: "0.85rem", margin: 0, fontFamily: "'Outfit', sans-serif" }}>
               Ha ocurrido un error. Por favor, llámanos directamente al <strong>900 XXX XXX</strong>.
             </p>
           )}
 
           <button
             type="submit"
-            className="btn-fire"
+            className="btn-cyan"
             disabled={status === "loading"}
-            style={{ justifyContent: "center", opacity: status === "loading" ? 0.7 : 1 }}
+            style={{ justifyContent: "center", width: "100%", opacity: status === "loading" ? 0.7 : 1 }}
           >
-            {status === "loading" ? "Enviando..." : "SOLICITAR VALORACIÓN GRATUITA"}
+            {status === "loading" ? "Enviando..." : "Solicitar valoración gratuita →"}
           </button>
 
-          <p style={{ fontSize: "0.78rem", color: dark ? "var(--gray)" : "rgba(0,0,0,0.45)", textAlign: "center", margin: 0 }}>
-            Sin compromiso · Respuesta en menos de 24h · Tu seguro puede cubrir el 100%
+          <p style={{ fontSize: "0.78rem", color: "var(--ghost)", textAlign: "center", margin: 0, fontFamily: "'Outfit', sans-serif" }}>
+            Sin compromiso · Tu seguro puede cubrir el 100%
           </p>
         </form>
       )}

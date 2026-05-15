@@ -1,6 +1,6 @@
 /*
- * Footer — Limpiezas Fénix
- * Filosofía: Resurgimiento Emocional — fondo ash oscuro, logo horizontal, enlaces SEO
+ * Footer — Limpiezas Fénix v2 "Tecnología y Confianza"
+ * Paleta: Azul petróleo (#0D1B2A) + Cian eléctrico (#00D4FF) + Blanco (#F8FAFC)
  */
 
 import { Link } from "wouter";
@@ -22,7 +22,7 @@ const CITIES_FOOTER = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: "var(--ash)", borderTop: "1px solid var(--border-subtle)", paddingTop: "3rem", paddingBottom: "2rem" }}>
+    <footer style={{ background: "var(--navy)", borderTop: "1px solid var(--border-subtle)", paddingTop: "3.5rem", paddingBottom: "2rem" }}>
       <div className="container">
         <div style={{
           display: "grid",
@@ -40,19 +40,19 @@ export default function Footer() {
                 style={{ height: "48px", width: "auto", marginBottom: "1rem" }}
               />
             </Link>
-            <p style={{ color: "var(--gray)", fontSize: "0.9rem", lineHeight: 1.7, marginBottom: "1rem" }}>
+            <p style={{ color: "var(--mist)", fontSize: "0.9rem", lineHeight: 1.7, marginBottom: "1rem", fontFamily: "'Outfit', sans-serif" }}>
               Empresa especializada en limpieza por incendio y rehabilitación tras siniestros en España. Servicio urgente 24h / 365 días.
             </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
-              <a href="tel:900XXXXXX" style={{ color: "var(--ember)", fontWeight: 700, fontSize: "1.05rem" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+              <a href="tel:900XXXXXX" style={{ color: "var(--cyan)", fontWeight: 700, fontSize: "1.05rem", fontFamily: "'Outfit', sans-serif" }}>
                 ☎ 900 XXX XXX
               </a>
-              <a href="mailto:info@limpiezaincendiosfenix.es" style={{ color: "var(--gray)", fontSize: "0.9rem" }}>
+              <a href="mailto:info@limpiezaincendiosfenix.es" style={{ color: "var(--mist)", fontSize: "0.9rem", fontFamily: "'Outfit', sans-serif" }}>
                 info@limpiezaincendiosfenix.es
               </a>
               <a
                 href="https://wa.me/34900XXXXXX?text=Hola%2C%20necesito%20ayuda%20urgente%20tras%20un%20incendio"
-                style={{ color: "#25D366", fontWeight: 600, fontSize: "0.9rem" }}
+                style={{ color: "var(--green)", fontWeight: 600, fontSize: "0.9rem", fontFamily: "'Outfit', sans-serif" }}
               >
                 💬 WhatsApp
               </a>
@@ -61,7 +61,7 @@ export default function Footer() {
 
           {/* Columna servicios */}
           <div>
-            <h4 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.3rem", color: "var(--light)", marginBottom: "1rem", letterSpacing: "0.04em" }}>
+            <h4 style={{ fontFamily: "'Syne', sans-serif", fontSize: "1rem", fontWeight: 800, color: "var(--white)", marginBottom: "1rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>
               Servicios
             </h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
@@ -75,9 +75,9 @@ export default function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    style={{ color: "var(--gray)", fontSize: "0.9rem", transition: "color 160ms" }}
-                    onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "var(--ember)"; }}
-                    onMouseLeave={(e) => { (e.target as HTMLElement).style.color = "var(--gray)"; }}
+                    style={{ color: "var(--mist)", fontSize: "0.9rem", transition: "color 160ms", fontFamily: "'Outfit', sans-serif" }}
+                    onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "var(--cyan)"; }}
+                    onMouseLeave={(e) => { (e.target as HTMLElement).style.color = "var(--mist)"; }}
                   >
                     {label}
                   </Link>
@@ -88,7 +88,7 @@ export default function Footer() {
 
           {/* Columna ciudades */}
           <div>
-            <h4 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.3rem", color: "var(--light)", marginBottom: "1rem", letterSpacing: "0.04em" }}>
+            <h4 style={{ fontFamily: "'Syne', sans-serif", fontSize: "1rem", fontWeight: 800, color: "var(--white)", marginBottom: "1rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>
               Ciudades
             </h4>
             <ul style={{
@@ -103,9 +103,9 @@ export default function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    style={{ color: "var(--gray)", fontSize: "0.85rem", transition: "color 160ms" }}
-                    onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "var(--ember)"; }}
-                    onMouseLeave={(e) => { (e.target as HTMLElement).style.color = "var(--gray)"; }}
+                    style={{ color: "var(--mist)", fontSize: "0.85rem", transition: "color 160ms", fontFamily: "'Outfit', sans-serif" }}
+                    onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "var(--cyan)"; }}
+                    onMouseLeave={(e) => { (e.target as HTMLElement).style.color = "var(--mist)"; }}
                   >
                     {label}
                   </Link>
@@ -116,7 +116,7 @@ export default function Footer() {
 
           {/* Columna legal */}
           <div>
-            <h4 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.3rem", color: "var(--light)", marginBottom: "1rem", letterSpacing: "0.04em" }}>
+            <h4 style={{ fontFamily: "'Syne', sans-serif", fontSize: "1rem", fontWeight: 800, color: "var(--white)", marginBottom: "1rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>
               Legal
             </h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
@@ -127,9 +127,9 @@ export default function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    style={{ color: "var(--gray)", fontSize: "0.9rem", transition: "color 160ms" }}
-                    onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "var(--ember)"; }}
-                    onMouseLeave={(e) => { (e.target as HTMLElement).style.color = "var(--gray)"; }}
+                    style={{ color: "var(--mist)", fontSize: "0.9rem", transition: "color 160ms", fontFamily: "'Outfit', sans-serif" }}
+                    onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "var(--cyan)"; }}
+                    onMouseLeave={(e) => { (e.target as HTMLElement).style.color = "var(--mist)"; }}
                   >
                     {label}
                   </Link>
@@ -144,10 +144,10 @@ export default function Footer() {
 
         {/* Línea divisoria */}
         <div style={{ borderTop: "1px solid var(--border-subtle)", paddingTop: "1.5rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "0.75rem" }}>
-          <p style={{ color: "var(--gray)", fontSize: "0.82rem", margin: 0 }}>
+          <p style={{ color: "var(--ghost)", fontSize: "0.82rem", margin: 0, fontFamily: "'Outfit', sans-serif" }}>
             © {new Date().getFullYear()} Limpiezas Fénix · limpiezaincendiosfenix.es · Todos los derechos reservados
           </p>
-          <p style={{ color: "var(--gray)", fontSize: "0.82rem", margin: 0 }}>
+          <p style={{ color: "var(--ghost)", fontSize: "0.82rem", margin: 0, fontFamily: "'Outfit', sans-serif" }}>
             Servicio urgente 24h / 365 días · España
           </p>
         </div>

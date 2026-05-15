@@ -19,15 +19,15 @@ export default function Privacidad() {
           <nav className="breadcrumb" style={{ marginBottom: "1.5rem" }}>
             <Link href="/">Inicio</Link>
             <span className="breadcrumb-sep">›</span>
-            <span style={{ color: "var(--ember)" }}>Política de Privacidad</span>
+            <span style={{ color: "var(--cyan)" }}>Política de Privacidad</span>
           </nav>
-          <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "2.5rem", color: "var(--light)", marginBottom: "0.5rem" }}>
-            Política de <span style={{ color: "var(--fire)" }}>Privacidad</span>
+          <h1 style={{ fontFamily: "'Syne', sans-serif", fontSize: "2.5rem", color: "var(--white)", marginBottom: "0.5rem" }}>
+            Política de <span style={{ color: "var(--cyan)" }}>Privacidad</span>
           </h1>
           <p style={{ color: "var(--muted-text)", fontSize: "0.85rem" }}>Última actualización: enero de 2025</p>
         </div>
       </section>
-      <section style={{ padding: "3rem 0 5rem", background: "var(--coal)" }}>
+      <section style={{ padding: "3rem 0 5rem", background: "var(--navy2)" }}>
         <div className="container">
           <div className="legal-content" style={{ maxWidth: "760px" }}>
             <h2>1. Responsable del tratamiento</h2>

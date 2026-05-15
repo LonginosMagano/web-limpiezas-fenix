@@ -62,7 +62,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
     <div className="faq-item">
       <button className="faq-question" onClick={() => setOpen(!open)} aria-expanded={open}>
         <span>{q}</span>
-        <span style={{ color: "var(--fire)", fontSize: "1.2rem", flexShrink: 0, transition: "transform 250ms", transform: open ? "rotate(45deg)" : "rotate(0)" }}>+</span>
+        <span style={{ color: "var(--cyan)", fontSize: "1.2rem", flexShrink: 0, transition: "transform 250ms", transform: open ? "rotate(45deg)" : "rotate(0)" }}>+</span>
       </button>
       <div className={`faq-answer${open ? " open" : ""}`}>
         <div className="faq-answer-inner">{a}</div>
@@ -98,24 +98,24 @@ export default function FAQ() {
           <nav className="breadcrumb" style={{ marginBottom: "1.5rem" }}>
             <Link href="/">Inicio</Link>
             <span className="breadcrumb-sep">›</span>
-            <span style={{ color: "var(--ember)" }}>Preguntas Frecuentes</span>
+            <span style={{ color: "var(--cyan)" }}>Preguntas Frecuentes</span>
           </nav>
-          <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(2.5rem, 4vw, 3.5rem)", color: "var(--light)", marginBottom: "0.75rem" }}>
-            Preguntas <span style={{ color: "var(--fire)" }}>Frecuentes</span>
+          <h1 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(2.5rem, 4vw, 3.5rem)", color: "var(--white)", marginBottom: "0.75rem" }}>
+            Preguntas <span style={{ color: "var(--cyan)" }}>Frecuentes</span>
           </h1>
-          <p style={{ color: "var(--gray)", fontSize: "1.05rem", maxWidth: "600px" }}>
+          <p style={{ color: "var(--mist)", fontSize: "1.05rem", maxWidth: "600px" }}>
             Todo lo que necesitas saber sobre la limpieza por incendio, nuestros servicios y cómo gestionar el seguro.
           </p>
         </div>
       </section>
 
-      <section style={{ padding: "4rem 0", background: "var(--coal)" }}>
+      <section style={{ padding: "4rem 0", background: "var(--navy2)" }}>
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 280px", gap: "3rem", alignItems: "start" }}>
             <div>
               {FAQ_SECTIONS.map((section) => (
                 <div key={section.title} style={{ marginBottom: "3rem" }}>
-                  <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.8rem", color: "var(--fire)", marginBottom: "1.25rem", letterSpacing: "0.03em" }}>
+                  <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "1.8rem", color: "var(--cyan)", marginBottom: "1.25rem", letterSpacing: "0.03em" }}>
                     {section.title}
                   </h2>
                   {section.faqs.map((faq) => (
@@ -128,9 +128,9 @@ export default function FAQ() {
             {/* Sidebar */}
             <div style={{ position: "sticky", top: "90px" }}>
               <div style={{ background: "rgba(255,69,0,0.08)", border: "1px solid rgba(255,69,0,0.2)", borderRadius: "0.5rem", padding: "1.5rem", marginBottom: "1.5rem" }}>
-                <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.8rem", color: "var(--fire)", marginBottom: "0.5rem" }}>24h / 365</div>
-                <p style={{ color: "var(--gray)", fontSize: "0.9rem", marginBottom: "1rem" }}>Servicio urgente disponible todos los días del año</p>
-                <a href="tel:900XXXXXX" className="btn-fire" style={{ width: "100%", justifyContent: "center", marginBottom: "0.5rem" }}>
+                <div style={{ fontFamily: "'Syne', sans-serif", fontSize: "1.8rem", color: "var(--cyan)", marginBottom: "0.5rem" }}>24h / 365</div>
+                <p style={{ color: "var(--mist)", fontSize: "0.9rem", marginBottom: "1rem" }}>Servicio urgente disponible todos los días del año</p>
+                <a href="tel:900XXXXXX" className="btn-cyan" style={{ width: "100%", justifyContent: "center", marginBottom: "0.5rem" }}>
                   ☎ 900 XXX XXX
                 </a>
                 <a href="https://wa.me/34900XXXXXX" className="btn-wa" style={{ width: "100%", justifyContent: "center" }} target="_blank" rel="noopener noreferrer">
@@ -138,14 +138,14 @@ export default function FAQ() {
                 </a>
               </div>
               <div style={{ background: "var(--ash)", border: "1px solid var(--border-subtle)", borderRadius: "0.5rem", padding: "1.5rem" }}>
-                <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.2rem", color: "var(--light)", marginBottom: "1rem" }}>
+                <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: "1.2rem", color: "var(--white)", marginBottom: "1rem" }}>
                   Páginas relacionadas
                 </h3>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                  <li><Link href="/limpieza-por-incendio/" style={{ color: "var(--ember)", fontSize: "0.9rem" }}>→ Limpieza por Incendio</Link></li>
-                  <li><Link href="/limpieza-laser/" style={{ color: "var(--ember)", fontSize: "0.9rem" }}>→ Limpieza Láser</Link></li>
-                  <li><Link href="/limpieza-hielo-seco/" style={{ color: "var(--ember)", fontSize: "0.9rem" }}>→ Limpieza Hielo Seco</Link></li>
-                  <li><Link href="/blog/" style={{ color: "var(--ember)", fontSize: "0.9rem" }}>→ Blog</Link></li>
+                  <li><Link href="/limpieza-por-incendio/" style={{ color: "var(--cyan)", fontSize: "0.9rem" }}>→ Limpieza por Incendio</Link></li>
+                  <li><Link href="/limpieza-laser/" style={{ color: "var(--cyan)", fontSize: "0.9rem" }}>→ Limpieza Láser</Link></li>
+                  <li><Link href="/limpieza-hielo-seco/" style={{ color: "var(--cyan)", fontSize: "0.9rem" }}>→ Limpieza Hielo Seco</Link></li>
+                  <li><Link href="/blog/" style={{ color: "var(--cyan)", fontSize: "0.9rem" }}>→ Blog</Link></li>
                 </ul>
               </div>
             </div>

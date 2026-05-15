@@ -1,7 +1,7 @@
 /*
- * Header — Limpiezas Fénix
- * Filosofía: Resurgimiento Emocional — fondo carbón, logo horizontal, CTA naranja fuego
- * Sticky con blur, topbar de urgencia, menú hamburguesa fullscreen con blur
+ * Header — Limpiezas Fénix v2 "Tecnología y Confianza"
+ * Paleta: Azul petróleo (#0D1B2A) + Cian eléctrico (#00D4FF) + Blanco (#F8FAFC)
+ * Sticky con glassmorphism, topbar de urgencia, menú hamburguesa fullscreen
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -27,10 +27,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Cerrar menú al cambiar de ruta
-  useEffect(() => {
-    closeMobileMenu();
-  }, [location]);
+  useEffect(() => { closeMobileMenu(); }, [location]);
 
   function closeMobileMenu() {
     setMenuOpen(false);
@@ -43,11 +40,8 @@ export default function Header() {
     document.body.style.overflow = next ? "hidden" : "";
   }
 
-  // Cerrar con Escape
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") closeMobileMenu();
-    };
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") closeMobileMenu(); };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, []);
@@ -59,13 +53,13 @@ export default function Header() {
         <div className="container">
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "0.5rem" }}>
             <span style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-              <span style={{ color: "var(--fire)" }}>🔥</span>
-              <strong>Servicio urgente 24h / 365 días</strong>
-              <span style={{ color: "var(--gray)" }}>— Valoración gratuita sin compromiso</span>
+              <span style={{ color: "var(--cyan)", fontSize: "0.9rem" }}>⚡</span>
+              <strong style={{ color: "var(--white)", fontFamily: "'Outfit', sans-serif" }}>Servicio urgente 24h / 365 días</strong>
+              <span style={{ color: "var(--ghost)" }}>— Valoración gratuita sin compromiso</span>
             </span>
             <a
               href="tel:900XXXXXX"
-              style={{ color: "var(--ember)", fontWeight: 700, letterSpacing: "0.04em" }}
+              style={{ color: "var(--cyan)", fontWeight: 700, letterSpacing: "0.04em", fontFamily: "'Outfit', sans-serif", fontSize: "0.9rem" }}
             >
               ☎ 900 XXX XXX
             </a>
@@ -98,12 +92,13 @@ export default function Header() {
                     borderRadius: "0.375rem",
                     fontSize: "0.9rem",
                     fontWeight: 500,
-                    color: location === link.href ? "var(--ember)" : "var(--light)",
+                    fontFamily: "'Outfit', sans-serif",
+                    color: location === link.href ? "var(--cyan)" : "var(--mist)",
                     transition: "color 160ms, background 160ms",
-                    background: location === link.href ? "rgba(255,69,0,0.1)" : "transparent",
+                    background: location === link.href ? "rgba(0,212,255,0.08)" : "transparent",
                   }}
-                  onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "var(--ember)"; }}
-                  onMouseLeave={(e) => { (e.target as HTMLElement).style.color = location === link.href ? "var(--ember)" : "var(--light)"; }}
+                  onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "var(--cyan)"; }}
+                  onMouseLeave={(e) => { (e.target as HTMLElement).style.color = location === link.href ? "var(--cyan)" : "var(--mist)"; }}
                 >
                   {link.label}
                 </Link>
@@ -113,8 +108,8 @@ export default function Header() {
             {/* CTA escritorio */}
             <a
               href="tel:900XXXXXX"
-              className="btn-fire"
-              style={{ flexShrink: 0, fontSize: "0.9rem", padding: "0.65rem 1.25rem" }}
+              className="btn-cyan"
+              style={{ flexShrink: 0, fontSize: "0.88rem", padding: "0.6rem 1.2rem" }}
             >
               ☎ 900 XXX XXX
             </a>
@@ -151,7 +146,7 @@ export default function Header() {
             right: "1.5rem",
             background: "none",
             border: "none",
-            color: "var(--light)",
+            color: "var(--mist)",
             fontSize: "1.5rem",
             cursor: "pointer",
           }}
@@ -166,7 +161,7 @@ export default function Header() {
         ))}
         <a
           href="tel:900XXXXXX"
-          className="btn-fire"
+          className="btn-cyan"
           onClick={closeMobileMenu}
           style={{ marginTop: "1rem" }}
         >
