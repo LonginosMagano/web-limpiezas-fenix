@@ -38,9 +38,9 @@ export default function CookieBanner() {
 
   return (
     <div className="cookie-banner" role="dialog" aria-label="Aviso de cookies">
-      <p style={{ margin: 0, fontSize: "0.88rem", color: "var(--mist)", flex: 1 }}>
+      <p style={{ margin: 0, fontSize: "0.88rem", color: "rgba(255,255,255,0.8)", flex: 1 }}>
         Usamos cookies propias y de terceros para mejorar tu experiencia y analizar el tráfico.{" "}
-        <Link href="/cookies/" style={{ color: "var(--cyan)", textDecoration: "underline" }}>
+        <Link href="/cookies/" style={{ color: "var(--terra-light)", textDecoration: "underline" }}>
           Más información
         </Link>
       </p>
@@ -50,7 +50,7 @@ export default function CookieBanner() {
           style={{
             background: "transparent",
             border: "1px solid rgba(255,255,255,0.2)",
-            color: "var(--mist)",
+            color: "rgba(255,255,255,0.7)",
             borderRadius: "0.375rem",
             padding: "0.5rem 1rem",
             fontSize: "0.85rem",
@@ -62,7 +62,7 @@ export default function CookieBanner() {
         <button
           id="cookieOk"
           onClick={accept}
-          className="btn-cyan"
+          className="btn-terra"
           style={{ padding: "0.5rem 1.25rem", fontSize: "0.85rem" }}
         >
           Aceptar todas

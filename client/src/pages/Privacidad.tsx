@@ -1,6 +1,6 @@
 /*
  * Privacidad — /privacidad/
- * Política de privacidad conforme a RGPD y LOPDGDD
+ * v3 "Editorial Cálido" — Playfair Display + Lato, crema/terracota/pizarra
  */
 
 import SEOHead from "@/components/SEOHead";
@@ -14,22 +14,22 @@ export default function Privacidad() {
         description="Política de privacidad de Limpiezas Fénix conforme al RGPD y la LOPDGDD. Información sobre el tratamiento de datos personales."
         canonical="https://limpiezaincendiosfenix.es/privacidad/"
       />
-      <section style={{ background: "var(--ash)", padding: "3rem 0 2rem" }}>
+
+      <section className="page-hero">
         <div className="container">
-          <nav className="breadcrumb" style={{ marginBottom: "1.5rem" }}>
+          <nav className="breadcrumb">
             <Link href="/">Inicio</Link>
-            <span className="breadcrumb-sep">›</span>
-            <span style={{ color: "var(--cyan)" }}>Política de Privacidad</span>
+            <span>›</span>
+            <span style={{ color: "var(--terra)" }}>Política de Privacidad</span>
           </nav>
-          <h1 style={{ fontFamily: "'Syne', sans-serif", fontSize: "2.5rem", color: "var(--white)", marginBottom: "0.5rem" }}>
-            Política de <span style={{ color: "var(--cyan)" }}>Privacidad</span>
-          </h1>
-          <p style={{ color: "var(--muted-text)", fontSize: "0.85rem" }}>Última actualización: enero de 2025</p>
+          <h1 className="page-hero-title">Política de <em>Privacidad</em></h1>
+          <p style={{ color: "var(--slate-light)", fontSize: "0.85rem", fontFamily: "'Lato', sans-serif" }}>Última actualización: enero de 2025</p>
         </div>
       </section>
-      <section style={{ padding: "3rem 0 5rem", background: "var(--navy2)" }}>
+
+      <section className="section-white">
         <div className="container">
-          <div className="legal-content" style={{ maxWidth: "760px" }}>
+          <div className="prose-fenix" style={{ maxWidth: "760px" }}>
             <h2>1. Responsable del tratamiento</h2>
             <p>El responsable del tratamiento de los datos personales recogidos a través de este sitio web es <strong>Limpiezas de Incendios Fénix</strong>, con domicilio en España. Contacto: <a href="mailto:info@limpiezaincendiosfenix.es">info@limpiezaincendiosfenix.es</a></p>
 

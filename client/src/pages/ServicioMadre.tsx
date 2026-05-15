@@ -1,6 +1,7 @@
 /*
  * ServicioMadre — /limpieza-por-incendio/
- * Página madre del servicio principal con SEO completo, módulo distintivo y landings locales
+ * Página madre del servicio principal con SEO completo
+ * v3 "Editorial Cálido" — Playfair Display + Lato, crema/terracota/pizarra
  */
 
 import { useState } from "react";
@@ -69,11 +70,9 @@ function FAQItem({ q, a }: { q: string; a: string }) {
     <div className="faq-item">
       <button className="faq-question" onClick={() => setOpen(!open)} aria-expanded={open}>
         <span>{q}</span>
-        <span style={{ color: "var(--cyan)", fontSize: "1.2rem", flexShrink: 0, transition: "transform 250ms", transform: open ? "rotate(45deg)" : "rotate(0)" }}>+</span>
+        <span className="faq-icon" style={{ transform: open ? "rotate(45deg)" : "rotate(0)" }}>+</span>
       </button>
-      <div className={`faq-answer${open ? " open" : ""}`}>
-        <div className="faq-answer-inner">{a}</div>
-      </div>
+      {open && <div className="faq-answer">{a}</div>}
     </div>
   );
 }
@@ -88,30 +87,29 @@ export default function ServicioMadre() {
         schema={[schemaService, schemaFAQ, schemaBreadcrumb]}
       />
 
-      {/* Hero */}
-      <section style={{ background: "var(--ash)", padding: "4rem 0 3rem", borderBottom: "1px solid var(--border-subtle)" }}>
+      {/* Hero de página */}
+      <section className="page-hero">
         <div className="container">
-          <nav className="breadcrumb" style={{ marginBottom: "1.5rem" }}>
+          <nav className="breadcrumb">
             <Link href="/">Inicio</Link>
-            <span className="breadcrumb-sep">›</span>
-            <span style={{ color: "var(--cyan)" }}>Limpieza por Incendio</span>
+            <span>›</span>
+            <span style={{ color: "var(--terra)" }}>Limpieza por Incendio</span>
           </nav>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 400px", gap: "3rem", alignItems: "start" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 380px", gap: "3rem", alignItems: "start" }}>
             <div>
-              <span className="badge-fire" style={{ marginBottom: "1rem", display: "inline-flex" }}>Servicio principal</span>
-              <h1 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(2.8rem, 5vw, 4.5rem)", color: "var(--white)", marginBottom: "1.25rem" }}>
-                Limpieza por<br />
-                <span style={{ color: "var(--cyan)" }}>Incendio</span> en España
+              <span className="section-label">Servicio principal</span>
+              <h1 className="page-hero-title">
+                Limpieza por <em>Incendio</em><br />en España
               </h1>
-              <p style={{ fontSize: "1.1rem", color: "var(--mist)", lineHeight: 1.75, marginBottom: "1.5rem", maxWidth: "580px" }}>
-                Recuperamos tu hogar, local o nave industrial tras un incendio. Eliminamos hollín, humo y olores con tecnología especializada. Gestionamos tu seguro y te acompañamos en todo el proceso.
+              <p className="page-hero-sub">
+                Recuperamos tu hogar, local o nave industrial tras un incendio. Eliminamos hollín, humo y olores. Gestionamos tu seguro y te acompañamos en todo el proceso.
               </p>
-              <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-                <a href="tel:900XXXXXX" className="btn-cyan">☎ Llamar ahora</a>
-                <a href="https://wa.me/34900XXXXXX" className="btn-wa" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+              <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginTop: "1.5rem" }}>
+                <a href="tel:900XXXXXX" className="btn-terra">☎ Llamar ahora</a>
+                <a href="https://wa.me/34900XXXXXX" className="btn-outline" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
               </div>
             </div>
-            <div style={{ background: "var(--ash2)", border: "1px solid rgba(255,69,0,0.2)", borderRadius: "0.75rem", padding: "2rem" }}>
+            <div style={{ background: "var(--white)", border: "1.5px solid var(--beige)", borderRadius: "8px", padding: "1.75rem" }}>
               <ContactForm title="Valoración gratuita" subtitle="Sin compromiso · Respuesta en 24h" />
             </div>
           </div>
@@ -119,24 +117,21 @@ export default function ServicioMadre() {
       </section>
 
       {/* Contenido principal */}
-      <section style={{ padding: "4rem 0", background: "var(--navy2)" }}>
+      <section className="section-white">
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "3rem", alignItems: "start" }}>
-            <div>
-              <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "2.2rem", color: "var(--white)", marginBottom: "1rem" }}>
-                ¿Qué es la limpieza por incendio?
-              </h2>
-              <p style={{ color: "var(--mist)", lineHeight: 1.8, marginBottom: "1.25rem" }}>
+          <div className="content-sidebar-layout">
+            {/* Contenido */}
+            <div className="prose-fenix">
+              <h2>¿Qué es la limpieza por incendio?</h2>
+              <p>
                 La limpieza por incendio es un proceso especializado que va mucho más allá de una limpieza convencional. Cuando un inmueble sufre un incendio, los residuos de combustión —hollín, humo, gases tóxicos y partículas en suspensión— se depositan en todas las superficies y penetran en los materiales porosos. Sin un tratamiento adecuado, estos residuos continúan deteriorando el inmueble durante semanas o meses.
               </p>
-              <p style={{ color: "var(--mist)", lineHeight: 1.8, marginBottom: "1.25rem" }}>
+              <p>
                 En Limpiezas Fénix aplicamos un protocolo de intervención en tres fases: diagnóstico técnico, limpieza especializada y desodorización. Cada fase utiliza los productos y la tecnología más adecuados para el tipo de superficie y el nivel de afectación, garantizando resultados duraderos.
               </p>
 
-              <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "2.2rem", color: "var(--white)", marginBottom: "1rem", marginTop: "2rem" }}>
-                Tipos de siniestros que tratamos
-              </h2>
-              <ul style={{ listStyle: "none", padding: 0, margin: "0 0 1.5rem", display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+              <h2>Tipos de siniestros que tratamos</h2>
+              <ul>
                 {[
                   "Incendios de cocina (el más frecuente en viviendas)",
                   "Incendios eléctricos (cortocircuitos, sobrecalentamiento)",
@@ -145,41 +140,39 @@ export default function ServicioMadre() {
                   "Incendios industriales en naves y almacenes",
                   "Incendios en residencias, hoteles y hospitales",
                   "Incendios forestales con afectación a inmuebles",
-                ].map((item) => (
-                  <li key={item} style={{ display: "flex", gap: "0.6rem", color: "var(--mist)", fontSize: "0.95rem" }}>
-                    <span style={{ color: "var(--cyan)", flexShrink: 0 }}>→</span>
-                    {item}
-                  </li>
-                ))}
+                ].map((item) => <li key={item}>{item}</li>)}
               </ul>
 
-              <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "2.2rem", color: "var(--white)", marginBottom: "1rem", marginTop: "2rem" }}>
-                Preguntas frecuentes
-              </h2>
+              <h2>Nuestro proceso de trabajo</h2>
+              <p>
+                Cuando nos llamas, enviamos un equipo de valoración en el menor tiempo posible. Evaluamos los daños, elaboramos un informe técnico y te presentamos un presupuesto detallado. Si tienes seguro, coordinamos directamente con la aseguradora para que el proceso sea lo más sencillo posible para ti.
+              </p>
+              <p>
+                La intervención comienza con la protección de las zonas no afectadas, seguida de la limpieza mecánica de residuos sólidos, el tratamiento químico de superficies y la desodorización con ozono o nebulización según el caso. Finalizamos con una inspección de calidad y entregamos un certificado de limpieza.
+              </p>
+
+              <h2>Preguntas frecuentes</h2>
               {FAQS_MADRE.map((faq) => (
                 <FAQItem key={faq.q} q={faq.q} a={faq.a} />
               ))}
             </div>
 
             {/* Sidebar */}
-            <div className="aside-sticky" style={{ position: "sticky", top: "90px" }}>
-              <div style={{ background: "var(--ash)", border: "1px solid var(--border-subtle)", borderRadius: "0.5rem", padding: "1.5rem", marginBottom: "1.5rem" }}>
-                <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: "1.4rem", color: "var(--white)", marginBottom: "1rem" }}>
-                  Servicios relacionados
-                </h3>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                  <li><Link href="/limpieza-laser/" style={{ color: "var(--cyan)", fontSize: "0.95rem" }}>→ Limpieza Láser</Link></li>
-                  <li><Link href="/limpieza-hielo-seco/" style={{ color: "var(--cyan)", fontSize: "0.95rem" }}>→ Limpieza Hielo Seco</Link></li>
-                  <li><Link href="/preguntas-frecuentes-limpieza-incendio/" style={{ color: "var(--cyan)", fontSize: "0.95rem" }}>→ Preguntas Frecuentes</Link></li>
-                  <li><Link href="/blog/" style={{ color: "var(--cyan)", fontSize: "0.95rem" }}>→ Blog</Link></li>
-                </ul>
+            <div>
+              <div className="sidebar-card" style={{ marginBottom: "1.5rem" }}>
+                <h3>Contacto urgente</h3>
+                <div style={{ textAlign: "center", padding: "0.5rem 0 1rem" }}>
+                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "2rem", fontWeight: 900, color: "var(--terra)", marginBottom: "0.25rem" }}>24h / 365</div>
+                  <p style={{ fontSize: "0.85rem", color: "var(--slate2)", marginBottom: "1.25rem" }}>Servicio urgente todos los días del año</p>
+                  <a href="tel:900XXXXXX" className="btn-terra" style={{ width: "100%", justifyContent: "center" }}>☎ 900 XXX XXX</a>
+                </div>
               </div>
-              <div style={{ background: "rgba(255,69,0,0.08)", border: "1px solid rgba(255,69,0,0.2)", borderRadius: "0.5rem", padding: "1.5rem" }}>
-                <div style={{ fontFamily: "'Syne', sans-serif", fontSize: "1.8rem", color: "var(--cyan)", marginBottom: "0.5rem" }}>24h / 365</div>
-                <p style={{ color: "var(--mist)", fontSize: "0.9rem", marginBottom: "1rem" }}>Servicio urgente disponible todos los días del año</p>
-                <a href="tel:900XXXXXX" className="btn-cyan" style={{ width: "100%", justifyContent: "center" }}>
-                  ☎ 900 XXX XXX
-                </a>
+              <div className="sidebar-card">
+                <h3>Más información</h3>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+                  <li><Link href="/preguntas-frecuentes-limpieza-incendio/" className="service-link">→ Preguntas Frecuentes</Link></li>
+                  <li><Link href="/blog/" className="service-link">→ Blog</Link></li>
+                </ul>
               </div>
             </div>
           </div>
@@ -187,41 +180,16 @@ export default function ServicioMadre() {
       </section>
 
       {/* Grid de ciudades */}
-      <section style={{ padding: "4rem 0", background: "var(--ash)" }}>
+      <section className="section-cream2">
         <div className="container">
-          <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "2.2rem", color: "var(--white)", marginBottom: "0.5rem" }}>
-            Limpieza por incendio por <span style={{ color: "var(--cyan)" }}>ciudad</span>
-          </h2>
-          <p style={{ color: "var(--mist)", marginBottom: "2rem" }}>Selecciona tu ciudad para ver información específica</p>
-          <div className="provinces-grid">
+          <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
+            <span className="section-label">Cobertura nacional</span>
+            <h2 className="section-title">Limpieza por incendio por <em>ciudad</em></h2>
+            <p className="section-subtitle" style={{ margin: "0 auto" }}>Selecciona tu ciudad para ver información específica</p>
+          </div>
+          <div className="cities-grid">
             {ALL_CITIES.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                style={{
-                  display: "block",
-                  background: "var(--ash2)",
-                  border: "1px solid var(--border-subtle)",
-                  borderRadius: "0.375rem",
-                  padding: "0.85rem 1rem",
-                  color: "var(--white)",
-                  fontSize: "0.9rem",
-                  fontWeight: 500,
-                  transition: "border-color 160ms, color 160ms, background 160ms",
-                }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = "rgba(255,69,0,0.4)";
-                  el.style.color = "var(--cyan)";
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = "var(--border-subtle)";
-                  el.style.color = "var(--white)";
-                }}
-              >
-                {label}
-              </Link>
+              <Link key={href} href={href} className="city-chip">{label}</Link>
             ))}
           </div>
         </div>

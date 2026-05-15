@@ -1,38 +1,29 @@
 /*
- * Header — Limpiezas Fénix v2 "Tecnología y Confianza"
- * Paleta: Azul petróleo (#0D1B2A) + Cian eléctrico (#00D4FF) + Blanco (#F8FAFC)
- * Sticky con glassmorphism, topbar de urgencia, menú hamburguesa fullscreen
+ * Header — Limpiezas Fénix v3 "Editorial Cálido"
+ * Fondo blanco, nav pizarra, acento terracota, logo horizontal
+ * SIN: Láser, Hielo Seco (eliminados por petición del cliente)
  */
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
+
+const LOGO_H = "/manus-storage/logo_fenix_horizontal_header_8f6aef89.png";
+const LOGO_SQ = "/manus-storage/logo_01_emblema_escudo_fenix_transparent_2fd6c62b.png";
 
 const NAV_LINKS = [
   { href: "/limpieza-por-incendio/", label: "Servicio" },
-  { href: "/limpieza-laser/", label: "Láser" },
-  { href: "/limpieza-hielo-seco/", label: "Hielo Seco" },
   { href: "/blog/", label: "Blog" },
   { href: "/preguntas-frecuentes-limpieza-incendio/", label: "FAQ" },
 ];
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [location] = useLocation();
-  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => { closeMobileMenu(); }, [location]);
-
-  function closeMobileMenu() {
     setMenuOpen(false);
     document.body.style.overflow = "";
-  }
+  }, [location]);
 
   function toggleMenu() {
     const next = !menuOpen;
@@ -41,133 +32,79 @@ export default function Header() {
   }
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") closeMobileMenu(); };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") { setMenuOpen(false); document.body.style.overflow = ""; }
+    };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, []);
 
   return (
     <>
-      {/* Topbar urgencia */}
+      {/* Topbar */}
       <div className="topbar">
         <div className="container">
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "0.5rem" }}>
-            <span style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-              <span style={{ color: "var(--cyan)", fontSize: "0.9rem" }}>⚡</span>
-              <strong style={{ color: "var(--white)", fontFamily: "'Outfit', sans-serif" }}>Servicio urgente 24h / 365 días</strong>
-              <span style={{ color: "var(--ghost)" }}>— Valoración gratuita sin compromiso</span>
-            </span>
-            <a
-              href="tel:900XXXXXX"
-              style={{ color: "var(--cyan)", fontWeight: 700, letterSpacing: "0.04em", fontFamily: "'Outfit', sans-serif", fontSize: "0.9rem" }}
-            >
-              ☎ 900 XXX XXX
-            </a>
+          <div className="topbar-inner">
+            <span>⚡ Servicio urgente 24h / 365 días — Valoración gratuita sin compromiso</span>
+            <a href="tel:900XXXXXX">☎ 900 XXX XXX</a>
           </div>
         </div>
       </div>
 
       {/* Header principal */}
-      <header className={`site-header${scrolled ? " scrolled" : ""}`}>
+      <header className="site-header">
         <div className="container">
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "68px", gap: "1rem" }}>
+          <div className="header-inner">
             {/* Logo */}
-            <Link href="/" style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
+            <Link href="/" className="header-logo" aria-label="Inicio">
               <img
-                src="/manus-storage/logo-fenix-horizontal_76dfd12f.png"
-                alt="Limpiezas Fénix — Limpieza por Incendio"
-                height={52}
-                style={{ height: "52px", width: "auto", maxWidth: "220px" }}
+                src={LOGO_H}
+                alt="Limpiezas de Incendios Fénix"
+                onError={(e) => { (e.target as HTMLImageElement).src = LOGO_SQ; }}
               />
             </Link>
 
-            {/* Navegación escritorio */}
-            <nav className="nav-links" style={{ display: "flex", alignItems: "center", gap: "0.25rem" }}>
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  style={{
-                    padding: "0.5rem 0.85rem",
-                    borderRadius: "0.375rem",
-                    fontSize: "0.9rem",
-                    fontWeight: 500,
-                    fontFamily: "'Outfit', sans-serif",
-                    color: location === link.href ? "var(--cyan)" : "var(--mist)",
-                    transition: "color 160ms, background 160ms",
-                    background: location === link.href ? "rgba(0,212,255,0.08)" : "transparent",
-                  }}
-                  onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "var(--cyan)"; }}
-                  onMouseLeave={(e) => { (e.target as HTMLElement).style.color = location === link.href ? "var(--cyan)" : "var(--mist)"; }}
-                >
-                  {link.label}
-                </Link>
-              ))}
+            {/* Nav escritorio */}
+            <nav aria-label="Navegación principal">
+              <ul className={`header-nav${menuOpen ? " open" : ""}`}>
+                {NAV_LINKS.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      style={{ color: location === link.href ? "var(--terra)" : undefined }}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+                <li>
+                  <a href="tel:900XXXXXX" className="btn-terra" style={{ padding: "0.55rem 1.25rem", fontSize: "0.82rem" }}>
+                    ☎ Llamar ahora
+                  </a>
+                </li>
+              </ul>
             </nav>
-
-            {/* CTA escritorio */}
-            <a
-              href="tel:900XXXXXX"
-              className="btn-cyan"
-              style={{ flexShrink: 0, fontSize: "0.88rem", padding: "0.6rem 1.2rem" }}
-            >
-              ☎ 900 XXX XXX
-            </a>
 
             {/* Hamburguesa */}
             <button
-              className={`hamburger${menuOpen ? " open" : ""}`}
+              className="hamburger"
               onClick={toggleMenu}
               aria-expanded={menuOpen}
-              aria-label="Abrir menú"
-              style={{ display: "none" }}
+              aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
             >
-              <span />
-              <span />
-              <span />
+              {menuOpen ? (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              ) : (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+              )}
             </button>
           </div>
         </div>
       </header>
-
-      {/* Menú móvil fullscreen */}
-      <div
-        ref={menuRef}
-        className={`mobile-menu${menuOpen ? " open" : ""}`}
-        role="dialog"
-        aria-modal="true"
-        aria-label="Menú de navegación"
-      >
-        <button
-          onClick={closeMobileMenu}
-          style={{
-            position: "absolute",
-            top: "1.5rem",
-            right: "1.5rem",
-            background: "none",
-            border: "none",
-            color: "var(--mist)",
-            fontSize: "1.5rem",
-            cursor: "pointer",
-          }}
-          aria-label="Cerrar menú"
-        >
-          ✕
-        </button>
-        {NAV_LINKS.map((link) => (
-          <Link key={link.href} href={link.href} onClick={closeMobileMenu}>
-            {link.label}
-          </Link>
-        ))}
-        <a
-          href="tel:900XXXXXX"
-          className="btn-cyan"
-          onClick={closeMobileMenu}
-          style={{ marginTop: "1rem" }}
-        >
-          ☎ 900 XXX XXX
-        </a>
-      </div>
     </>
   );
 }

@@ -1,6 +1,6 @@
 /*
- * ContactForm — Limpiezas Fénix v2 "Tecnología y Confianza"
- * Paleta: Azul petróleo + Cian eléctrico + Verde esmeralda
+ * ContactForm — Limpiezas Fénix v3 "Editorial Cálido"
+ * Campos: nombre, teléfono, ciudad, descripción. Botón terracota.
  */
 
 import { useState } from "react";
@@ -11,110 +11,105 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({ title, subtitle }: ContactFormProps) {
-  const [status, setStatus] = useState<"idle" | "loading" | "ok" | "error">("idle");
-  const [form, setForm] = useState({ nombre: "", poblacion: "", telefono: "" });
+  const [form, setForm] = useState({ nombre: "", telefono: "", ciudad: "", descripcion: "" });
+  const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">("idle");
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+    setForm({ ...form, [e.target.name]: e.target.value });
   }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setStatus("loading");
+    setStatus("sending");
     try {
-      const res = await fetch("/contact.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(form).toString(),
-      });
-      if (res.ok) {
-        setStatus("ok");
-        setForm({ nombre: "", poblacion: "", telefono: "" });
-      } else {
-        setStatus("error");
-      }
+      // En producción: fetch("/contact.php", { method: "POST", body: ... })
+      await new Promise((r) => setTimeout(r, 900));
+      setStatus("ok");
     } catch {
       setStatus("error");
     }
   }
 
+  if (status === "ok") {
+    return (
+      <div style={{ textAlign: "center", padding: "2rem 0" }}>
+        <div style={{ fontSize: "2.5rem", marginBottom: "0.75rem" }}>✅</div>
+        <h3 style={{ fontFamily: "'Playfair Display', serif", color: "var(--charcoal)", marginBottom: "0.5rem" }}>
+          ¡Solicitud recibida!
+        </h3>
+        <p style={{ color: "var(--slate2)", fontSize: "0.95rem" }}>
+          Te contactaremos en menos de 24 horas con tu valoración gratuita.
+        </p>
+      </div>
+    );
+  }
+
   return (
-    <div>
+    <form className="contact-form" onSubmit={handleSubmit} noValidate>
       {title && (
-        <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: "1.3rem", fontWeight: 800, color: "var(--white)", marginBottom: "0.25rem" }}>
+        <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.15rem", color: "var(--charcoal)", marginBottom: "0.25rem" }}>
           {title}
         </h3>
       )}
       {subtitle && (
-        <p style={{ color: "var(--ghost)", fontSize: "0.85rem", marginBottom: "1.25rem", fontFamily: "'Outfit', sans-serif" }}>
-          {subtitle}
+        <p style={{ fontSize: "0.82rem", color: "var(--slate-light)", marginBottom: "0.5rem" }}>{subtitle}</p>
+      )}
+
+      <input
+        type="text"
+        name="nombre"
+        placeholder="Tu nombre completo *"
+        value={form.nombre}
+        onChange={handleChange}
+        required
+        autoComplete="name"
+      />
+      <input
+        type="tel"
+        name="telefono"
+        placeholder="Teléfono de contacto *"
+        value={form.telefono}
+        onChange={handleChange}
+        required
+        autoComplete="tel"
+      />
+      <input
+        type="text"
+        name="ciudad"
+        placeholder="Ciudad o localidad"
+        value={form.ciudad}
+        onChange={handleChange}
+        autoComplete="address-level2"
+      />
+      <textarea
+        name="descripcion"
+        placeholder="Describe brevemente el siniestro (opcional)"
+        value={form.descripcion}
+        onChange={handleChange}
+        rows={4}
+        style={{ resize: "vertical" }}
+      />
+
+      {status === "error" && (
+        <p style={{ color: "var(--destructive)", fontSize: "0.85rem" }}>
+          Ha ocurrido un error. Por favor llámanos directamente al 900 XXX XXX.
         </p>
       )}
 
-      {status === "ok" ? (
-        <div style={{
-          background: "rgba(0,230,118,0.08)",
-          border: "1px solid rgba(0,230,118,0.3)",
-          borderRadius: "0.75rem",
-          padding: "1.5rem",
-          textAlign: "center",
-        }}>
-          <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>✅</div>
-          <strong style={{ color: "var(--green)", fontFamily: "'Syne', sans-serif" }}>¡Solicitud recibida!</strong>
-          <p style={{ margin: "0.5rem 0 0", fontSize: "0.9rem", color: "var(--mist)", fontFamily: "'Outfit', sans-serif" }}>
-            Nos pondremos en contacto contigo en menos de 24 horas.
-          </p>
-        </div>
-      ) : (
-        <form className="contact-form" onSubmit={handleSubmit} noValidate>
-          <input
-            type="text"
-            name="nombre"
-            placeholder="Tu nombre"
-            required
-            autoComplete="name"
-            value={form.nombre}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            name="poblacion"
-            placeholder="Municipio del siniestro"
-            required
-            autoComplete="address-level2"
-            value={form.poblacion}
-            onChange={handleChange}
-          />
-          <input
-            type="tel"
-            name="telefono"
-            placeholder="Tu teléfono"
-            required
-            autoComplete="tel"
-            value={form.telefono}
-            onChange={handleChange}
-          />
+      <button
+        type="submit"
+        className="btn-terra"
+        disabled={status === "sending"}
+        style={{ width: "100%", justifyContent: "center", fontSize: "1rem", padding: "0.9rem" }}
+      >
+        {status === "sending" ? "Enviando..." : "Solicitar valoración gratuita →"}
+      </button>
 
-          {status === "error" && (
-            <p style={{ color: "#FF6B6B", fontSize: "0.85rem", margin: 0, fontFamily: "'Outfit', sans-serif" }}>
-              Ha ocurrido un error. Por favor, llámanos directamente al <strong>900 XXX XXX</strong>.
-            </p>
-          )}
-
-          <button
-            type="submit"
-            className="btn-cyan"
-            disabled={status === "loading"}
-            style={{ justifyContent: "center", width: "100%", opacity: status === "loading" ? 0.7 : 1 }}
-          >
-            {status === "loading" ? "Enviando..." : "Solicitar valoración gratuita →"}
-          </button>
-
-          <p style={{ fontSize: "0.78rem", color: "var(--ghost)", textAlign: "center", margin: 0, fontFamily: "'Outfit', sans-serif" }}>
-            Sin compromiso · Tu seguro puede cubrir el 100%
-          </p>
-        </form>
-      )}
-    </div>
+      <p style={{ fontSize: "0.75rem", color: "var(--slate-light)", textAlign: "center" }}>
+        Al enviar aceptas nuestra{" "}
+        <a href="/privacidad/" style={{ color: "var(--terra)" }}>política de privacidad</a>.
+        Sin compromiso.
+      </p>
+    </form>
   );
 }

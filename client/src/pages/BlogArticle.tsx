@@ -1,6 +1,6 @@
 /*
  * BlogArticle — /blog/:slug/
- * Artículo individual del blog con renderizado de Markdown
+ * v3 "Editorial Cálido" — Playfair Display + Lato, crema/terracota/pizarra
  */
 
 import SEOHead from "@/components/SEOHead";
@@ -8,41 +8,28 @@ import { Link } from "wouter";
 import { BLOG_POSTS } from "@/data/blogPosts";
 import NotFound from "./NotFound";
 
-// Renderizador simple de Markdown a HTML
 function renderMarkdown(md: string): string {
   return md
     .trim()
-    // Headings
-    .replace(/^## (.+)$/gm, '<h2 class="blog-h2">$1</h2>')
-    .replace(/^### (.+)$/gm, '<h3 class="blog-h3">$1</h3>')
-    .replace(/^#### (.+)$/gm, '<h4 class="blog-h4">$1</h4>')
-    // Bold
+    .replace(/^## (.+)$/gm, '<h2 class="prose-h2">$1</h2>')
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    .replace(/^#### (.+)$/gm, '<h4>$1</h4>')
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    // Italic
     .replace(/\*(.+?)\*/g, '<em>$1</em>')
-    // Table rows (simple)
     .replace(/^\|(.+)\|$/gm, (match) => {
       const cells = match.split("|").filter(Boolean).map(c => c.trim());
-      if (cells.every(c => c.match(/^[-:]+$/))) {
-        return ""; // separator row
-      }
+      if (cells.every(c => c.match(/^[-:]+$/))) return "";
       return `<tr>${cells.map(c => `<td>${c}</td>`).join("")}</tr>`;
     })
-    // Unordered list items
     .replace(/^- (.+)$/gm, '<li>$1</li>')
-    // Wrap consecutive <li> in <ul>
-    .replace(/(<li>[\s\S]*?<\/li>\n?)+/g, (match) => `<ul class="blog-ul">${match}</ul>`)
-    // Paragraphs (lines not starting with HTML tags)
-    .replace(/^(?!<[hult])(.+)$/gm, '<p>$1</p>')
-    // Clean up empty paragraphs
+    .replace(/(<li>[\s\S]*?<\/li>\n?)+/g, (match) => `<ul class="prose-list">${match}</ul>`)
+    .replace(/^(?!<[hultb])(.+)$/gm, '<p>$1</p>')
     .replace(/<p>\s*<\/p>/g, '')
-    // Clean up double newlines
     .replace(/\n{3,}/g, '\n\n');
 }
 
 export default function BlogArticle({ slug }: { slug: string }) {
   const post = BLOG_POSTS.find(p => p.slug === slug);
-
   if (!post) return <NotFound />;
 
   const schemaArticle = {
@@ -77,70 +64,54 @@ export default function BlogArticle({ slug }: { slug: string }) {
         schema={[schemaArticle, schemaBreadcrumb]}
       />
 
-      <section style={{ background: "var(--ash)", padding: "3rem 0 2rem" }}>
+      {/* Hero */}
+      <section className="page-hero">
         <div className="container">
-          <nav className="breadcrumb" style={{ marginBottom: "1.5rem" }}>
+          <nav className="breadcrumb">
             <Link href="/">Inicio</Link>
-            <span className="breadcrumb-sep">›</span>
+            <span>›</span>
             <Link href="/blog/">Blog</Link>
-            <span className="breadcrumb-sep">›</span>
-            <span style={{ color: "var(--cyan)", maxWidth: "300px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{post.title}</span>
+            <span>›</span>
+            <span style={{ color: "var(--terra)" }}>{post.category}</span>
           </nav>
           <div style={{ maxWidth: "760px" }}>
-            <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem", fontSize: "0.85rem", color: "var(--muted-text)", flexWrap: "wrap" }}>
-              <span style={{ background: "rgba(255,69,0,0.15)", color: "var(--cyan)", padding: "0.2rem 0.6rem", borderRadius: "999px", fontWeight: 600 }}>
-                {post.category}
-              </span>
-              <span>{new Date(post.date).toLocaleDateString("es-ES", { year: "numeric", month: "long", day: "numeric" })}</span>
-              <span>·</span>
-              <span>{post.readTime} de lectura</span>
-            </div>
-            <h1 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--white)", lineHeight: 1.15, marginBottom: "1rem" }}>
-              {post.title}
-            </h1>
-            <p style={{ fontSize: "1.1rem", color: "var(--mist)", lineHeight: 1.7 }}>{post.excerpt}</p>
+            <span className="section-label">{post.category}</span>
+            <h1 className="page-hero-title">{post.title}</h1>
+            <p style={{ fontSize: "0.88rem", color: "var(--slate-light)", fontFamily: "'Lato', sans-serif" }}>
+              {post.date} · {post.readTime} de lectura
+            </p>
           </div>
         </div>
       </section>
 
-      <section style={{ padding: "3rem 0 5rem", background: "var(--navy2)" }}>
+      {/* Contenido */}
+      <section className="section-white">
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 300px", gap: "3rem", alignItems: "start" }}>
-            {/* Contenido del artículo */}
-            <article
-              className="blog-content"
-              dangerouslySetInnerHTML={{ __html: renderMarkdown(post.content) }}
-            />
+          <div className="content-sidebar-layout">
+            <article className="prose-fenix" dangerouslySetInnerHTML={{ __html: renderMarkdown(post.content) }} />
 
-            {/* Sidebar */}
-            <aside className="blog-sidebar" style={{ position: "sticky", top: "90px" }}>
-              {/* CTA */}
-              <div style={{ background: "rgba(255,69,0,0.08)", border: "1px solid rgba(255,69,0,0.2)", borderRadius: "0.5rem", padding: "1.5rem", marginBottom: "1.5rem" }}>
-                <div style={{ fontFamily: "'Syne', sans-serif", fontSize: "1.3rem", color: "var(--cyan)", marginBottom: "0.5rem" }}>
-                  ¿Necesitas ayuda urgente?
+            <aside>
+              <div className="sidebar-card" style={{ marginBottom: "1.5rem" }}>
+                <h3>¿Necesitas ayuda urgente?</h3>
+                <div style={{ textAlign: "center", paddingTop: "0.5rem" }}>
+                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.8rem", fontWeight: 900, color: "var(--terra)", marginBottom: "0.25rem" }}>24h / 365</div>
+                  <p style={{ fontSize: "0.83rem", color: "var(--slate2)", marginBottom: "1rem" }}>Servicio urgente todos los días del año</p>
+                  <a href="tel:900XXXXXX" className="btn-terra" style={{ width: "100%", justifyContent: "center", display: "flex" }}>☎ 900 XXX XXX</a>
+                  <a href="https://wa.me/34900XXXXXX" target="_blank" rel="noopener noreferrer"
+                    style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.4rem", marginTop: "0.6rem", background: "#25D366", color: "#fff", fontFamily: "'Lato', sans-serif", fontWeight: 700, fontSize: "0.88rem", padding: "0.7rem 1rem", borderRadius: "4px", textDecoration: "none" }}>
+                    💬 WhatsApp
+                  </a>
                 </div>
-                <p style={{ color: "var(--mist)", fontSize: "0.88rem", marginBottom: "1rem", lineHeight: 1.6 }}>
-                  Servicio de limpieza por incendio 24h/365. Valoración gratuita.
-                </p>
-                <a href="tel:900XXXXXX" className="btn-cyan" style={{ width: "100%", justifyContent: "center", marginBottom: "0.5rem" }}>
-                  ☎ Llamar ahora
-                </a>
-                <a href="https://wa.me/34900XXXXXX" className="btn-wa" style={{ width: "100%", justifyContent: "center" }} target="_blank" rel="noopener noreferrer">
-                  💬 WhatsApp
-                </a>
               </div>
 
-              {/* Artículos relacionados */}
-              <div style={{ background: "var(--ash)", border: "1px solid var(--border-subtle)", borderRadius: "0.5rem", padding: "1.5rem" }}>
-                <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: "1.2rem", color: "var(--white)", marginBottom: "1rem" }}>
-                  Artículos relacionados
-                </h3>
-                <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+              <div className="sidebar-card">
+                <h3>Artículos relacionados</h3>
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
                   {otherPosts.map((p) => (
-                    <Link key={p.slug} href={`/blog/${p.slug}/`}>
-                      <div style={{ cursor: "pointer" }}>
-                        <div style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--white)", lineHeight: 1.4, marginBottom: "0.25rem" }}>{p.title}</div>
-                        <div style={{ fontSize: "0.78rem", color: "var(--muted-text)" }}>{p.readTime} de lectura</div>
+                    <Link key={p.slug} href={`/blog/${p.slug}/`} style={{ textDecoration: "none" }}>
+                      <div style={{ borderBottom: "1px solid var(--beige)", paddingBottom: "0.75rem" }}>
+                        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "0.9rem", color: "var(--charcoal)", marginBottom: "0.2rem", lineHeight: 1.35 }}>{p.title}</div>
+                        <div style={{ fontSize: "0.75rem", color: "var(--slate-light)", fontFamily: "'Lato', sans-serif" }}>{p.readTime} de lectura</div>
                       </div>
                     </Link>
                   ))}

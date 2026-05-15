@@ -1,6 +1,7 @@
 /*
- * App.tsx — Limpiezas Fénix
+ * App.tsx — Limpiezas Fénix v3 "Editorial Cálido"
  * Rutas del sitio + layout global (Header, Footer, FloatingCTAs, CookieBanner)
+ * SIN: Láser, Hielo Seco (eliminados por petición del cliente)
  */
 
 import { Toaster } from "@/components/ui/sonner";
@@ -16,8 +17,6 @@ import CookieBanner from "./components/CookieBanner";
 // Páginas
 import Home from "./pages/Home";
 import ServicioMadre from "./pages/ServicioMadre";
-import LimpiezaLaser from "./pages/LimpiezaLaser";
-import LimpiezaHieloSeco from "./pages/LimpiezaHieloSeco";
 import BlogIndex from "./pages/BlogIndex";
 import BlogArticle from "./pages/BlogArticle";
 import FAQ from "./pages/FAQ";
@@ -28,7 +27,7 @@ import NotFound from "./pages/NotFound";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", background: "var(--navy2)" }}>
+    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", background: "var(--cream)" }}>
       <Header />
       <main style={{ flex: 1 }}>
         {children}
@@ -48,12 +47,6 @@ function Router() {
 
       {/* Página madre servicio */}
       <Route path="/limpieza-por-incendio/" component={() => <Layout><ServicioMadre /></Layout>} />
-
-      {/* Servicios especiales */}
-      <Route path="/limpieza-laser/" component={() => <Layout><LimpiezaLaser /></Layout>} />
-      <Route path="/limpieza-con-laser/" component={() => { window.location.replace("/limpieza-laser/"); return null; }} />
-      <Route path="/limpieza-hielo-seco/" component={() => <Layout><LimpiezaHieloSeco /></Layout>} />
-      <Route path="/limpieza-criogenica/" component={() => { window.location.replace("/limpieza-hielo-seco/"); return null; }} />
 
       {/* Blog */}
       <Route path="/blog/" component={() => <Layout><BlogIndex /></Layout>} />
@@ -79,7 +72,7 @@ function Router() {
 export default function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider defaultTheme="dark">
+      <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
           <Router />

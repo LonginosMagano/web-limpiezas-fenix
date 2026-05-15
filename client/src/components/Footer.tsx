@@ -1,9 +1,12 @@
 /*
- * Footer — Limpiezas Fénix v2 "Tecnología y Confianza"
- * Paleta: Azul petróleo (#0D1B2A) + Cian eléctrico (#00D4FF) + Blanco (#F8FAFC)
+ * Footer — Limpiezas Fénix v3 "Editorial Cálido"
+ * Fondo charcoal, logo cuadrado, columnas de nav, contacto y legal
+ * SIN: Láser, Hielo Seco (eliminados)
  */
 
 import { Link } from "wouter";
+
+const LOGO_SQ = "/manus-storage/logo_01_emblema_escudo_fenix_transparent_2fd6c62b.png";
 
 const CITIES_FOOTER = [
   { href: "/limpieza-por-incendio-madrid/", label: "Madrid" },
@@ -22,134 +25,75 @@ const CITIES_FOOTER = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: "var(--navy)", borderTop: "1px solid var(--border-subtle)", paddingTop: "3.5rem", paddingBottom: "2rem" }}>
+    <footer className="site-footer">
       <div className="container">
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-          gap: "2.5rem",
-          marginBottom: "2.5rem"
-        }}>
+        <div className="footer-grid">
           {/* Columna marca */}
           <div>
-            <Link href="/">
-              <img
-                src="/manus-storage/logo-fenix-horizontal_76dfd12f.png"
-                alt="Limpiezas Fénix"
-                height={48}
-                style={{ height: "48px", width: "auto", marginBottom: "1rem" }}
-              />
-            </Link>
-            <p style={{ color: "var(--mist)", fontSize: "0.9rem", lineHeight: 1.7, marginBottom: "1rem", fontFamily: "'Outfit', sans-serif" }}>
-              Empresa especializada en limpieza por incendio y rehabilitación tras siniestros en España. Servicio urgente 24h / 365 días.
+            <div className="footer-logo">
+              <Link href="/">
+                <img src={LOGO_SQ} alt="Limpiezas de Incendios Fénix" />
+              </Link>
+            </div>
+            <p className="footer-desc">
+              Especialistas en limpieza y restauración tras incendios en toda España. Hollín, humo, olores y daños estructurales. Servicio urgente 24h/365 días.
             </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-              <a href="tel:900XXXXXX" style={{ color: "var(--cyan)", fontWeight: 700, fontSize: "1.05rem", fontFamily: "'Outfit', sans-serif" }}>
-                ☎ 900 XXX XXX
-              </a>
-              <a href="mailto:info@limpiezaincendiosfenix.es" style={{ color: "var(--mist)", fontSize: "0.9rem", fontFamily: "'Outfit', sans-serif" }}>
-                info@limpiezaincendiosfenix.es
-              </a>
-              <a
-                href="https://wa.me/34900XXXXXX?text=Hola%2C%20necesito%20ayuda%20urgente%20tras%20un%20incendio"
-                style={{ color: "var(--green)", fontWeight: 600, fontSize: "0.9rem", fontFamily: "'Outfit', sans-serif" }}
-              >
-                💬 WhatsApp
-              </a>
+            <div className="footer-contact-item">
+              <span>☎</span>
+              <a href="tel:900XXXXXX">900 XXX XXX</a>
+            </div>
+            <div className="footer-contact-item">
+              <span>💬</span>
+              <a href="https://wa.me/34900XXXXXX" target="_blank" rel="noopener noreferrer">WhatsApp urgente</a>
+            </div>
+            <div className="footer-contact-item">
+              <span>✉</span>
+              <a href="mailto:info@limpiezasincendiosfenix.es">info@limpiezasincendiosfenix.es</a>
             </div>
           </div>
 
           {/* Columna servicios */}
-          <div>
-            <h4 style={{ fontFamily: "'Syne', sans-serif", fontSize: "1rem", fontWeight: 800, color: "var(--white)", marginBottom: "1rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>
-              Servicios
-            </h4>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-              {[
-                ["/limpieza-por-incendio/", "Limpieza por Incendio"],
-                ["/limpieza-laser/", "Limpieza Láser"],
-                ["/limpieza-hielo-seco/", "Limpieza Hielo Seco"],
-                ["/preguntas-frecuentes-limpieza-incendio/", "Preguntas Frecuentes"],
-                ["/blog/", "Blog"],
-              ].map(([href, label]) => (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    style={{ color: "var(--mist)", fontSize: "0.9rem", transition: "color 160ms", fontFamily: "'Outfit', sans-serif" }}
-                    onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "var(--cyan)"; }}
-                    onMouseLeave={(e) => { (e.target as HTMLElement).style.color = "var(--mist)"; }}
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
+          <div className="footer-col">
+            <h4>Servicios</h4>
+            <ul>
+              <li><Link href="/limpieza-por-incendio/">Limpieza por Incendio</Link></li>
+              <li><Link href="/limpieza-por-incendio/#hollin">Eliminación de Hollín</Link></li>
+              <li><Link href="/limpieza-por-incendio/#humo">Eliminación de Humo</Link></li>
+              <li><Link href="/limpieza-por-incendio/#olores">Eliminación de Olores</Link></li>
+              <li><Link href="/limpieza-por-incendio/#seguros">Gestión con Seguros</Link></li>
             </ul>
           </div>
 
           {/* Columna ciudades */}
-          <div>
-            <h4 style={{ fontFamily: "'Syne', sans-serif", fontSize: "1rem", fontWeight: 800, color: "var(--white)", marginBottom: "1rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>
-              Ciudades
-            </h4>
-            <ul style={{
-              listStyle: "none",
-              padding: 0,
-              margin: 0,
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "0.4rem 1rem"
-            }}>
+          <div className="footer-col">
+            <h4>Ciudades</h4>
+            <ul>
               {CITIES_FOOTER.map(({ href, label }) => (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    style={{ color: "var(--mist)", fontSize: "0.85rem", transition: "color 160ms", fontFamily: "'Outfit', sans-serif" }}
-                    onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "var(--cyan)"; }}
-                    onMouseLeave={(e) => { (e.target as HTMLElement).style.color = "var(--mist)"; }}
-                  >
-                    {label}
-                  </Link>
-                </li>
+                <li key={href}><Link href={href}>{label}</Link></li>
               ))}
             </ul>
           </div>
 
-          {/* Columna legal */}
-          <div>
-            <h4 style={{ fontFamily: "'Syne', sans-serif", fontSize: "1rem", fontWeight: 800, color: "var(--white)", marginBottom: "1rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>
-              Legal
-            </h4>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-              {[
-                ["/privacidad/", "Política de Privacidad"],
-                ["/cookies/", "Política de Cookies"],
-              ].map(([href, label]) => (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    style={{ color: "var(--mist)", fontSize: "0.9rem", transition: "color 160ms", fontFamily: "'Outfit', sans-serif" }}
-                    onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "var(--cyan)"; }}
-                    onMouseLeave={(e) => { (e.target as HTMLElement).style.color = "var(--mist)"; }}
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
+          {/* Columna info */}
+          <div className="footer-col">
+            <h4>Información</h4>
+            <ul>
+              <li><Link href="/blog/">Blog</Link></li>
+              <li><Link href="/preguntas-frecuentes-limpieza-incendio/">Preguntas Frecuentes</Link></li>
+              <li><Link href="/privacidad/">Política de Privacidad</Link></li>
+              <li><Link href="/cookies/">Política de Cookies</Link></li>
             </ul>
-            <div style={{ marginTop: "1.5rem" }}>
-              <span className="badge-green">✓ Tu seguro puede cubrir el 100%</span>
-            </div>
           </div>
         </div>
 
-        {/* Línea divisoria */}
-        <div style={{ borderTop: "1px solid var(--border-subtle)", paddingTop: "1.5rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "0.75rem" }}>
-          <p style={{ color: "var(--ghost)", fontSize: "0.82rem", margin: 0, fontFamily: "'Outfit', sans-serif" }}>
-            © {new Date().getFullYear()} Limpiezas Fénix · limpiezaincendiosfenix.es · Todos los derechos reservados
-          </p>
-          <p style={{ color: "var(--ghost)", fontSize: "0.82rem", margin: 0, fontFamily: "'Outfit', sans-serif" }}>
-            Servicio urgente 24h / 365 días · España
-          </p>
+        {/* Bottom bar */}
+        <div className="footer-bottom">
+          <span>© {new Date().getFullYear()} Limpiezas de Incendios Fénix. Todos los derechos reservados.</span>
+          <span>
+            <Link href="/privacidad/">Privacidad</Link>
+            {" · "}
+            <Link href="/cookies/">Cookies</Link>
+          </span>
         </div>
       </div>
     </footer>

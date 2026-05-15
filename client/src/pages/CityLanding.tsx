@@ -290,11 +290,9 @@ function FAQItem({ q, a }: { q: string; a: string }) {
     <div className="faq-item">
       <button className="faq-question" onClick={() => setOpen(!open)} aria-expanded={open}>
         <span>{q}</span>
-        <span style={{ color: "var(--cyan)", fontSize: "1.2rem", flexShrink: 0, transition: "transform 250ms", transform: open ? "rotate(45deg)" : "rotate(0)" }}>+</span>
+        <span className="faq-icon" style={{ transform: open ? "rotate(45deg)" : "rotate(0)" }}>+</span>
       </button>
-      <div className={`faq-answer${open ? " open" : ""}`}>
-        <div className="faq-answer-inner">{a}</div>
-      </div>
+      {open && <div className="faq-answer">{a}</div>}
     </div>
   );
 }
@@ -367,39 +365,39 @@ export default function CityLanding({ ciudad }: { ciudad: string }) {
       />
 
       {/* Hero */}
-      <section style={{ background: "var(--ash)", padding: "4rem 0 3rem" }}>
+      <section className="page-hero">
         <div className="container">
-          <nav className="breadcrumb" style={{ marginBottom: "1.5rem" }}>
+          <nav className="breadcrumb">
             <Link href="/">Inicio</Link>
-            <span className="breadcrumb-sep">›</span>
+            <span>›</span>
             <Link href="/limpieza-por-incendio/">Limpieza por Incendio</Link>
-            <span className="breadcrumb-sep">›</span>
-            <span style={{ color: "var(--cyan)" }}>{city.name}</span>
+            <span>›</span>
+            <span style={{ color: "var(--terra)" }}>{city.name}</span>
           </nav>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 400px", gap: "3rem", alignItems: "start" }}>
             <div>
-              <span className="badge-fire" style={{ marginBottom: "1rem", display: "inline-flex" }}>📍 {city.name}, {city.province}</span>
-              <h1 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(2.5rem, 4.5vw, 4rem)", color: "var(--white)", marginBottom: "1.25rem" }}>
+              <span className="section-label">📍 {city.name}, {city.province}</span>
+              <h1 className="page-hero-title" style={{ marginTop: "0.75rem" }}>
                 Limpieza por Incendio<br />
-                en <span style={{ color: "var(--cyan)" }}>{city.name}</span>
+                en <em>{city.name}</em>
               </h1>
-              <p style={{ fontSize: "1.05rem", color: "var(--mist)", lineHeight: 1.75, marginBottom: "1rem" }}>
+              <p className="page-hero-sub">
                 {city.intro}
               </p>
-              <div style={{ background: "rgba(255,69,0,0.08)", border: "1px solid rgba(255,69,0,0.15)", borderRadius: "0.5rem", padding: "1rem 1.25rem", marginBottom: "1.5rem" }}>
+              <div className="info-box" style={{ marginBottom: "1.5rem" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                  <span style={{ color: "var(--cyan)", fontSize: "1.1rem" }}>⏱️</span>
-                  <span style={{ color: "var(--white)", fontSize: "0.95rem" }}>
+                  <span style={{ fontSize: "1.1rem" }}>⏱️</span>
+                  <span style={{ color: "var(--charcoal)", fontSize: "0.95rem" }}>
                     <strong>Tiempo de respuesta en {city.name}:</strong> {city.responseTime}
                   </span>
                 </div>
               </div>
               <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-                <a href="tel:900XXXXXX" className="btn-cyan">☎ Llamar ahora</a>
-                <a href="https://wa.me/34900XXXXXX" className="btn-wa" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+                <a href="tel:900XXXXXX" className="btn-terra">☎ Llamar ahora</a>
+                <a href="https://wa.me/34900XXXXXX" className="btn-outline" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
               </div>
             </div>
-            <div style={{ background: "var(--ash2)", border: "1px solid rgba(255,69,0,0.2)", borderRadius: "0.75rem", padding: "2rem" }}>
+            <div style={{ background: "var(--white)", border: "1.5px solid var(--beige)", borderRadius: "8px", padding: "1.75rem" }}>
               <ContactForm title={`Valoración gratuita en ${city.name}`} subtitle="Sin compromiso · Respuesta en 24h" />
             </div>
           </div>
@@ -407,47 +405,38 @@ export default function CityLanding({ ciudad }: { ciudad: string }) {
       </section>
 
       {/* Contenido local */}
-      <section style={{ padding: "4rem 0", background: "var(--navy2)" }}>
+      <section className="section-white">
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "3rem" }}>
+          <div className="content-sidebar-layout">
             <div>
               {/* Dato local */}
-              <div style={{ background: "rgba(255,69,0,0.06)", border: "1px solid rgba(255,69,0,0.15)", borderRadius: "0.5rem", padding: "1.25rem 1.5rem", marginBottom: "2rem" }}>
-                <div style={{ fontFamily: "'Syne', sans-serif", fontSize: "1.1rem", color: "var(--cyan)", marginBottom: "0.4rem" }}>
+              <div className="info-box" style={{ marginBottom: "2rem" }}>
+                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1rem", color: "var(--terra)", marginBottom: "0.4rem", fontWeight: 700 }}>
                   📊 Dato local
                 </div>
-                <p style={{ color: "var(--mist)", fontSize: "0.95rem", lineHeight: 1.7, margin: 0 }}>{city.localFact}</p>
+                <p style={{ color: "var(--slate2)", fontSize: "0.95rem", lineHeight: 1.7, margin: 0 }}>{city.localFact}</p>
               </div>
 
-              <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "2rem", color: "var(--white)", marginBottom: "1rem" }}>
-                Nuestros servicios en {city.name}
-              </h2>
-              <ul style={{ listStyle: "none", padding: 0, margin: "0 0 2rem", display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+              <h2 className="prose-h2">Nuestros servicios en {city.name}</h2>
+              <ul className="prose-list" style={{ marginBottom: "2rem" }}>
                 {[
                   `Limpieza de hollín y humo en viviendas de ${city.name}`,
                   `Eliminación de olores a humo en ${city.name}`,
-                  `Limpieza láser en edificios históricos de ${city.name}`,
-                  `Limpieza con hielo seco en industrias de ${city.province}`,
                   `Rehabilitación de inmuebles tras incendio en ${city.name}`,
                   `Gestión del seguro de incendio en ${city.region}`,
                   `Incendios industriales en naves de ${city.province}`,
                 ].map((item) => (
-                  <li key={item} style={{ display: "flex", gap: "0.6rem", color: "var(--mist)", fontSize: "0.95rem" }}>
-                    <span style={{ color: "var(--cyan)", flexShrink: 0 }}>→</span>
-                    {item}
-                  </li>
+                  <li key={item}>{item}</li>
                 ))}
               </ul>
 
               {/* Barrios */}
               {city.neighborhoods.length > 0 && (
                 <>
-                  <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "2rem", color: "var(--white)", marginBottom: "1rem" }}>
-                    Barrios de {city.name} donde operamos
-                  </h2>
+                  <h2 className="prose-h2">Barrios de {city.name} donde operamos</h2>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "2rem" }}>
                     {city.neighborhoods.map((n) => (
-                      <span key={n} style={{ background: "var(--ash)", border: "1px solid var(--border-subtle)", borderRadius: "999px", padding: "0.3rem 0.85rem", fontSize: "0.85rem", color: "var(--mist)" }}>
+                      <span key={n} className="tag-chip">
                         {n}
                       </span>
                     ))}
@@ -458,12 +447,10 @@ export default function CityLanding({ ciudad }: { ciudad: string }) {
               {/* Municipios cercanos */}
               {city.nearbyTowns.length > 0 && (
                 <>
-                  <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "2rem", color: "var(--white)", marginBottom: "1rem" }}>
-                    También cubrimos
-                  </h2>
+                  <h2 className="prose-h2">También cubrimos</h2>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "2rem" }}>
                     {city.nearbyTowns.map((t) => (
-                      <span key={t} style={{ background: "var(--ash)", border: "1px solid var(--border-subtle)", borderRadius: "999px", padding: "0.3rem 0.85rem", fontSize: "0.85rem", color: "var(--mist)" }}>
+                      <span key={t} className="tag-chip">
                         {t}
                       </span>
                     ))}
@@ -473,45 +460,40 @@ export default function CityLanding({ ciudad }: { ciudad: string }) {
 
               {/* Testimonial */}
               <div className="testimonial-card" style={{ marginBottom: "2rem" }}>
-                <div style={{ display: "flex", gap: "0.25rem", marginBottom: "0.75rem", marginTop: "1.5rem" }}>
+                <div style={{ display: "flex", gap: "0.25rem", marginBottom: "0.75rem" }}>
                   {Array.from({ length: 5 }).map((_, j) => (
                     <span key={j} style={{ color: "var(--gold)" }}>★</span>
                   ))}
                 </div>
-                <p style={{ color: "var(--mist)", fontSize: "0.95rem", lineHeight: 1.7, marginBottom: "1rem" }}>
+                <p style={{ color: "var(--slate2)", fontSize: "0.95rem", lineHeight: 1.7, marginBottom: "1rem", fontStyle: "italic" }}>
                   "{city.testimonial.text}"
                 </p>
-                <div style={{ fontWeight: 600, fontSize: "0.9rem", color: "var(--white)" }}>{city.testimonial.name}</div>
+                <div style={{ fontWeight: 700, fontSize: "0.9rem", color: "var(--charcoal)" }}>{city.testimonial.name}</div>
               </div>
 
               {/* FAQ */}
-              <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "2rem", color: "var(--white)", marginBottom: "1.25rem" }}>
-                Preguntas frecuentes sobre limpieza por incendio en {city.name}
-              </h2>
+              <h2 className="prose-h2">Preguntas frecuentes sobre limpieza por incendio en {city.name}</h2>
               {faqs.map((faq) => (
                 <FAQItem key={faq.q} q={faq.q} a={faq.a} />
               ))}
             </div>
 
             {/* Sidebar */}
-            <div style={{ position: "sticky", top: "90px", alignSelf: "start" }}>
-              <div style={{ background: "var(--ash)", border: "1px solid var(--border-subtle)", borderRadius: "0.5rem", padding: "1.5rem", marginBottom: "1.5rem" }}>
-                <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: "1.4rem", color: "var(--white)", marginBottom: "1rem" }}>
-                  Servicios en {city.name}
-                </h3>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                  <li><Link href="/limpieza-por-incendio/" style={{ color: "var(--cyan)", fontSize: "0.95rem" }}>→ Limpieza por Incendio</Link></li>
-                  <li><Link href="/limpieza-laser/" style={{ color: "var(--cyan)", fontSize: "0.95rem" }}>→ Limpieza Láser</Link></li>
-                  <li><Link href="/limpieza-hielo-seco/" style={{ color: "var(--cyan)", fontSize: "0.95rem" }}>→ Limpieza Hielo Seco</Link></li>
-                  <li><Link href="/preguntas-frecuentes-limpieza-incendio/" style={{ color: "var(--cyan)", fontSize: "0.95rem" }}>→ Preguntas Frecuentes</Link></li>
+            <div>
+              <div className="sidebar-card" style={{ marginBottom: "1.5rem" }}>
+                <h3>Servicios en {city.name}</h3>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+                  <li><Link href="/limpieza-por-incendio/" className="service-link">→ Limpieza por Incendio</Link></li>
+                  <li><Link href="/preguntas-frecuentes-limpieza-incendio/" className="service-link">→ Preguntas Frecuentes</Link></li>
+                  <li><Link href="/blog/" className="service-link">→ Blog</Link></li>
                 </ul>
               </div>
-              <div style={{ background: "rgba(255,69,0,0.08)", border: "1px solid rgba(255,69,0,0.2)", borderRadius: "0.5rem", padding: "1.5rem" }}>
-                <div style={{ fontFamily: "'Syne', sans-serif", fontSize: "1.8rem", color: "var(--cyan)", marginBottom: "0.5rem" }}>24h / 365</div>
-                <p style={{ color: "var(--mist)", fontSize: "0.9rem", marginBottom: "1rem" }}>Servicio urgente en {city.name}</p>
-                <a href="tel:900XXXXXX" className="btn-cyan" style={{ width: "100%", justifyContent: "center" }}>
-                  ☎ 900 XXX XXX
-                </a>
+              <div className="sidebar-card">
+                <div style={{ textAlign: "center", padding: "0.5rem 0 1rem" }}>
+                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "2rem", fontWeight: 900, color: "var(--terra)", marginBottom: "0.25rem" }}>24h / 365</div>
+                  <p style={{ fontSize: "0.85rem", color: "var(--slate2)", marginBottom: "1.25rem" }}>Servicio urgente en {city.name}</p>
+                  <a href="tel:900XXXXXX" className="btn-terra" style={{ width: "100%", justifyContent: "center" }}>☎ 900 XXX XXX</a>
+                </div>
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 /*
- * FloatingCTAs — Limpiezas Fénix
- * Botones flotantes en escritorio, barra fija en móvil
+ * FloatingCTAs — Limpiezas Fénix v3 "Editorial Cálido"
+ * Botones flotantes escritorio (terracota + verde), barra fija móvil
  */
 
 export default function FloatingCTAs() {
@@ -31,7 +31,7 @@ export default function FloatingCTAs() {
       {/* Barra CTA — solo móvil */}
       <div className="mobile-cta-bar" role="navigation" aria-label="Acciones rápidas">
         <a href="tel:900XXXXXX" className="mobile-cta-call">
-          📞 Llamar ahora
+          ☎ Llamar ahora
         </a>
         <a
           href="https://wa.me/34900XXXXXX?text=Hola%2C%20necesito%20ayuda%20urgente%20tras%20un%20incendio"
