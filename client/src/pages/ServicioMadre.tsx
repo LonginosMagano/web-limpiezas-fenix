@@ -82,7 +82,7 @@ export default function ServicioMadre() {
     <>
       <SEOHead
         title="Limpieza por Incendio en España | Urgente 24h — Limpiezas Fénix"
-        description="Servicio especializado de limpieza por incendio en España. Hollín, humo, olores. Urgente 24h/365. Valoración gratuita. Tu seguro puede cubrir el 100%. ☎ 900 XXX XXX"
+        description="Servicio especializado de limpieza por incendio en España. Hollín, humo, olores. Urgente 24h/365. Valoración gratuita. Valoración gratuita sin compromiso. ☎ 900 XXX XXX"
         canonical="https://limpiezaincendiosfenix.es/limpieza-por-incendio/"
         schema={[schemaService, schemaFAQ, schemaBreadcrumb]}
       />
@@ -102,7 +102,7 @@ export default function ServicioMadre() {
                 Limpieza por <em>Incendio</em><br />en España
               </h1>
               <p className="page-hero-sub">
-                Recuperamos tu hogar, local o nave industrial tras un incendio. Eliminamos hollín, humo y olores. Gestionamos tu seguro y te acompañamos en todo el proceso.
+                Recuperamos tu hogar, local o nave industrial tras un incendio. Eliminamos hollín, humo y olores. Equipo especializado y te acompañamos en todo el proceso.
               </p>
               <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginTop: "1.5rem" }}>
                 <a href="tel:900XXXXXX" className="btn-terra">☎ Llamar ahora</a>

@@ -52,7 +52,7 @@ En las primeras 72 horas, el hollín puede:
 
 Por eso, **llamar a una empresa especializada en limpieza por incendio en las primeras horas** es la decisión más importante que puedes tomar.
 
-### Paso 3: Gestión del seguro
+### Paso 3: Documentación técnica
 
 La mayoría de las pólizas de hogar cubren los daños por incendio, incluyendo la limpieza y la rehabilitación del inmueble. Estos son los pasos para gestionar el seguro correctamente:
 
@@ -390,7 +390,7 @@ Se utilizan tratamientos de ozono de alta potencia y nebulización de productos 
 
 Tras la limpieza, se aplican tratamientos preventivos para evitar la aparición de moho y hongos, especialmente en zonas donde se ha utilizado agua para extinguir el incendio.
 
-### Gestión del seguro industrial
+### Coordinación con la empresa
 
 Las pólizas de industria suelen incluir cobertura por pérdida de beneficios durante el período de rehabilitación. Esto hace que el informe pericial sea aún más importante en el caso de incendios industriales, ya que debe documentar no solo los daños materiales sino también el impacto en la producción.
 

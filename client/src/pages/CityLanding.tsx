@@ -312,7 +312,7 @@ export default function CityLanding({ ciudad }: { ciudad: string }) {
     },
     {
       q: `¿El seguro cubre la limpieza por incendio en ${city.name}?`,
-      a: `En la mayoría de los casos, sí. Trabajamos con todas las aseguradoras que operan en ${city.region}. Elaboramos el informe pericial y coordinamos directamente con tu aseguradora.`,
+      a: `Elaboramos un informe técnico detallado de todos los trabajos realizados para que dispongas de documentación completa del proceso de restauración.`,
     },
     {
       q: `¿Tienen experiencia con edificios históricos en ${city.name}?`,
@@ -359,7 +359,7 @@ export default function CityLanding({ ciudad }: { ciudad: string }) {
     <>
       <SEOHead
         title={`Limpieza por Incendio en ${city.name} | Urgente 24h — Limpiezas Fénix`}
-        description={`Limpieza por incendio en ${city.name}. Servicio urgente 24h/365. Hollín, humo, olores. Valoración gratuita. Tu seguro puede cubrir el 100%. ☎ 900 XXX XXX`}
+        description={`Limpieza por incendio en ${city.name}. Servicio urgente 24h/365. Hollín, humo, olores. Valoración gratuita. Valoración gratuita sin compromiso. ☎ 900 XXX XXX`}
         canonical={`https://limpiezaincendiosfenix.es/limpieza-por-incendio-${ciudad}/`}
         schema={[schemaLocalBusiness, schemaFAQ, schemaBreadcrumb]}
       />
@@ -423,7 +423,7 @@ export default function CityLanding({ ciudad }: { ciudad: string }) {
                   `Limpieza de hollín y humo en viviendas de ${city.name}`,
                   `Eliminación de olores a humo en ${city.name}`,
                   `Rehabilitación de inmuebles tras incendio en ${city.name}`,
-                  `Gestión del seguro de incendio en ${city.region}`,
+                  `Inicio de trabajos de incendio en ${city.region}`,
                   `Incendios industriales en naves de ${city.province}`,
                 ].map((item) => (
                   <li key={item}>{item}</li>
