@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Servicio madre -->
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/limpieza-por-incendio/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Servicios especiales -->
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/limpieza-laser/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/limpieza-hielo-seco/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- FAQ -->
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/preguntas-frecuentes-limpieza-incendio/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/blog/que-hacer-despues-de-un-incendio-en-casa/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/blog/como-eliminar-olor-a-humo-tras-incendio/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/blog/limpieza-laser-vs-quimica-incendio/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/blog/seguro-hogar-cubre-limpieza-incendio/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/blog/incendio-industrial-limpieza-nave/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Landings locales -->
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/limpieza-por-incendio-madrid/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/limpieza-por-incendio-barcelona/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/limpieza-por-incendio-valencia/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/limpieza-por-incendio-sevilla/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/limpieza-por-incendio-malaga/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/limpieza-por-incendio-zaragoza/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/limpieza-por-incendio-murcia/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/limpieza-por-incendio-alicante/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/limpieza-por-incendio-valladolid/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/limpieza-por-incendio-toledo/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/limpieza-por-incendio-granada/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/limpieza-por-incendio-cordoba/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/limpieza-por-incendio-bilbao/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/limpieza-por-incendio-san-sebastian/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/limpieza-por-incendio-pamplona/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/limpieza-por-incendio-logrono/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Legales -->
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/privacidad/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://limpiezaincendiosfenix.es/cookies/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

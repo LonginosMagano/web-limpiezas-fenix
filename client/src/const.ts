@@ -1,17 +1,11 @@
-export { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
+/*
+ * const.ts — Constantes globales de Limpiezas Fénix
+ * Centraliza teléfono, WhatsApp, email y datos de contacto
+ */
 
-// Generate login URL at runtime so redirect URI reflects the current origin.
-export const getLoginUrl = () => {
-  const oauthPortalUrl = import.meta.env.VITE_OAUTH_PORTAL_URL;
-  const appId = import.meta.env.VITE_APP_ID;
-  const redirectUri = `${window.location.origin}/api/oauth/callback`;
-  const state = btoa(redirectUri);
-
-  const url = new URL(`${oauthPortalUrl}/app-auth`);
-  url.searchParams.set("appId", appId);
-  url.searchParams.set("redirectUri", redirectUri);
-  url.searchParams.set("state", state);
-  url.searchParams.set("type", "signIn");
-
-  return url.toString();
-};
+export const TELEFONO = "900 XXX XXX";
+export const TELEFONOCLEAN = "900XXXXXX";
+export const WHATSAPP = "34900XXXXXX";
+export const EMAIL = "info@limpiezaincendiosfenix.es";
+export const EMPRESA = "Limpiezas de Incendios Fénix";
+export const DOMINIO = "https://limpiezaincendiosfenix.es";

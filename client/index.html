@@ -1,19 +1,57 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>{{project_title}}</title>    
-    <!-- THIS IS THE START OF A COMMENT BLOCK, BLOCK TO BE DELETED: Google Fonts here, example:
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+    <title>Limpiezas Fénix | Limpieza por Incendio Urgente 24h</title>
+    <meta name="description" content="Empresa especializada en limpieza por incendio en España. Servicio urgente 24h/365. Valoración gratuita. Tu seguro puede cubrir el 100%. ☎ {{TELEFONO}}" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://limpiezaincendiosfenix.es/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Limpiezas Fénix | Limpieza por Incendio Urgente 24h" />
+    <meta property="og:description" content="Empresa especializada en limpieza por incendio en España. Servicio urgente 24h/365. Tu seguro puede cubrir el 100%." />
+    <meta property="og:url" content="https://limpiezaincendiosfenix.es/" />
+    <meta property="og:image" content="https://picsum.photos/seed/fenix-og/1200/630" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Limpiezas Fénix | Limpieza por Incendio Urgente 24h" />
+    <meta name="twitter:description" content="Empresa especializada en limpieza por incendio en España. Servicio urgente 24h/365." />
+    <meta name="twitter:image" content="https://picsum.photos/seed/fenix-og/1200/630" />
+
+    <!-- Google Fonts: Bebas Neue + DM Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    THIS IS THE END OF A COMMENT BLOCK, BLOCK TO BE DELETED -->
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
 
+    <!-- Schema LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Limpiezas Fénix",
+      "description": "Empresa especializada en limpieza por incendio y rehabilitación tras siniestros en España.",
+      "url": "https://limpiezaincendiosfenix.es/",
+      "telephone": "{{TELEFONO}}",
+      "email": "info@limpiezaincendiosfenix.es",
+      "areaServed": "España",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "sameAs": []
+    }
+    </script>
+  </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
@@ -22,5 +60,4 @@
       src="%VITE_ANALYTICS_ENDPOINT%/umami"
       data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
   </body>
-
 </html>
