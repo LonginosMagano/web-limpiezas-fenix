@@ -87,7 +87,7 @@ export default function FAQ() {
       <SEOHead
         title="Preguntas Frecuentes sobre Limpieza por Incendio — Limpiezas Fénix"
         description="Respuestas a las preguntas más frecuentes sobre limpieza por incendio: proceso, técnicas, seguros, tipos de inmuebles y tiempos de respuesta."
-        canonical="https://limpiezaincendiosfenix.es/preguntas-frecuentes-limpieza-incendio/"
+        canonical="https://limpiezadeincendiosfenix.es/preguntas-frecuentes-limpieza-incendio/"
         schema={[schemaFAQ]}
       />
 

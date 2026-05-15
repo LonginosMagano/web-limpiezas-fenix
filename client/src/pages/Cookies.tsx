@@ -15,7 +15,7 @@ export default function Cookies() {
       <SEOHead
         title="Política de Cookies — Limpiezas Fénix"
         description="Política de cookies de Limpiezas Fénix conforme a la LSSI y el RGPD. Información sobre los tipos de cookies utilizadas y cómo gestionarlas."
-        canonical="https://limpiezaincendiosfenix.es/cookies/"
+        canonical="https://limpiezadeincendiosfenix.es/cookies/"
       />
 
       <section className="page-hero">

@@ -11,8 +11,8 @@ const schemaBreadcrumb = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://limpiezaincendiosfenix.es/" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://limpiezaincendiosfenix.es/blog/" },
+    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://limpiezadeincendiosfenix.es/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://limpiezadeincendiosfenix.es/blog/" },
   ],
 };
 
@@ -30,7 +30,7 @@ export default function BlogIndex() {
       <SEOHead
         title="Blog sobre Limpieza por Incendio | Guías y Consejos — Limpiezas Fénix"
         description="Blog especializado en limpieza por incendio. Guías prácticas, consejos técnicos y todo lo que necesitas saber sobre la recuperación de inmuebles tras un siniestro."
-        canonical="https://limpiezaincendiosfenix.es/blog/"
+        canonical="https://limpiezadeincendiosfenix.es/blog/"
         schema={[schemaBreadcrumb]}
       />
 

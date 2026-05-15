@@ -12,7 +12,7 @@ export default function Privacidad() {
       <SEOHead
         title="Política de Privacidad — Limpiezas Fénix"
         description="Política de privacidad de Limpiezas Fénix conforme al RGPD y la LOPDGDD. Información sobre el tratamiento de datos personales."
-        canonical="https://limpiezaincendiosfenix.es/privacidad/"
+        canonical="https://limpiezadeincendiosfenix.es/privacidad/"
       />
 
       <section className="page-hero">
@@ -31,7 +31,7 @@ export default function Privacidad() {
         <div className="container">
           <div className="prose-fenix" style={{ maxWidth: "760px" }}>
             <h2>1. Responsable del tratamiento</h2>
-            <p>El responsable del tratamiento de los datos personales recogidos a través de este sitio web es <strong>Limpiezas de Incendios Fénix</strong>, con domicilio en España. Contacto: <a href="mailto:info@limpiezaincendiosfenix.es">info@limpiezaincendiosfenix.es</a></p>
+            <p>El responsable del tratamiento de los datos personales recogidos a través de este sitio web es <strong>Limpiezas de Incendios Fénix</strong>, con domicilio en España. Contacto: <a href="mailto:info@limpiezadeincendiosfenix.es">info@limpiezadeincendiosfenix.es</a></p>
 
             <h2>2. Datos que recogemos</h2>
             <p>A través de los formularios de contacto de este sitio web, podemos recoger los siguientes datos personales:</p>
@@ -58,7 +58,7 @@ export default function Privacidad() {
             <p>Los datos se conservarán durante el tiempo necesario para la prestación del servicio y, posteriormente, durante los plazos legalmente establecidos para atender posibles responsabilidades.</p>
 
             <h2>6. Derechos del interesado</h2>
-            <p>El interesado tiene derecho a acceder, rectificar, suprimir, limitar el tratamiento, portabilidad y oposición al tratamiento de sus datos personales. Para ejercer estos derechos, puede contactar con nosotros en <a href="mailto:info@limpiezaincendiosfenix.es">info@limpiezaincendiosfenix.es</a>.</p>
+            <p>El interesado tiene derecho a acceder, rectificar, suprimir, limitar el tratamiento, portabilidad y oposición al tratamiento de sus datos personales. Para ejercer estos derechos, puede contactar con nosotros en <a href="mailto:info@limpiezadeincendiosfenix.es">info@limpiezadeincendiosfenix.es</a>.</p>
             <p>Asimismo, tiene derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es).</p>
 
             <h2>7. Cookies</h2>

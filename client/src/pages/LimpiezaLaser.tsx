@@ -21,7 +21,7 @@ const schemaService = {
   name: "Limpieza Láser por Incendio",
   provider: { "@type": "LocalBusiness", name: "Limpiezas Fénix" },
   description: "Limpieza láser especializada para eliminar hollín y daños por incendio en piedra, ladrillo, madera, metal y patrimonio histórico.",
-  url: "https://limpiezaincendiosfenix.es/limpieza-laser/",
+  url: "https://limpiezadeincendiosfenix.es/limpieza-laser/",
 };
 
 const schemaFAQ = {
@@ -55,7 +55,7 @@ export default function LimpiezaLaser() {
       <SEOHead
         title="Limpieza Láser por Incendio | Hollín en Piedra, Madera y Metal — Limpiezas Fénix"
         description="Limpieza láser especializada para eliminar hollín y daños por incendio en piedra, ladrillo, madera, metal y patrimonio histórico. Sin productos químicos. ☎ 900 XXX XXX"
-        canonical="https://limpiezaincendiosfenix.es/limpieza-laser/"
+        canonical="https://limpiezadeincendiosfenix.es/limpieza-laser/"
         schema={[schemaService, schemaFAQ]}
       />
 

@@ -21,7 +21,7 @@ const schemaService = {
   name: "Limpieza con Hielo Seco por Incendio",
   provider: { "@type": "LocalBusiness", name: "Limpiezas Fénix" },
   description: "Limpieza con hielo seco (CO₂) para maquinaria industrial, cuadros eléctricos y equipos afectados por incendio. Sin agua, sin residuos.",
-  url: "https://limpiezaincendiosfenix.es/limpieza-hielo-seco/",
+  url: "https://limpiezadeincendiosfenix.es/limpieza-hielo-seco/",
 };
 
 const schemaFAQ = {
@@ -55,7 +55,7 @@ export default function LimpiezaHieloSeco() {
       <SEOHead
         title="Limpieza con Hielo Seco por Incendio | Maquinaria Industrial — Limpiezas Fénix"
         description="Limpieza con hielo seco (CO₂) para maquinaria industrial y equipos afectados por incendio. Sin agua, sin residuos. Ideal para cuadros eléctricos y producción. ☎ 900 XXX XXX"
-        canonical="https://limpiezaincendiosfenix.es/limpieza-hielo-seco/"
+        canonical="https://limpiezadeincendiosfenix.es/limpieza-hielo-seco/"
         schema={[schemaService, schemaFAQ]}
       />
 

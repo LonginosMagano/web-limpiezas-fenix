@@ -42,7 +42,7 @@ const schemaService = {
   provider: { "@type": "LocalBusiness", name: "Limpiezas Fénix" },
   description: "Servicio especializado de limpieza y rehabilitación de inmuebles afectados por incendio en España. Hollín, humo, olores. Urgente 24h.",
   areaServed: "España",
-  url: "https://limpiezaincendiosfenix.es/limpieza-por-incendio/",
+  url: "https://limpiezadeincendiosfenix.es/limpieza-por-incendio/",
 };
 
 const schemaFAQ = {
@@ -59,8 +59,8 @@ const schemaBreadcrumb = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://limpiezaincendiosfenix.es/" },
-    { "@type": "ListItem", position: 2, name: "Limpieza por Incendio", item: "https://limpiezaincendiosfenix.es/limpieza-por-incendio/" },
+    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://limpiezadeincendiosfenix.es/" },
+    { "@type": "ListItem", position: 2, name: "Limpieza por Incendio", item: "https://limpiezadeincendiosfenix.es/limpieza-por-incendio/" },
   ],
 };
 
@@ -83,7 +83,7 @@ export default function ServicioMadre() {
       <SEOHead
         title="Limpieza por Incendio en España | Urgente 24h — Limpiezas Fénix"
         description="Servicio especializado de limpieza por incendio en España. Hollín, humo, olores. Urgente 24h/365. Valoración gratuita. Valoración gratuita sin compromiso. ☎ 900 XXX XXX"
-        canonical="https://limpiezaincendiosfenix.es/limpieza-por-incendio/"
+        canonical="https://limpiezadeincendiosfenix.es/limpieza-por-incendio/"
         schema={[schemaService, schemaFAQ, schemaBreadcrumb]}
       />
 

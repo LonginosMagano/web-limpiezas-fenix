@@ -6,6 +6,6 @@
 export const TELEFONO = "900 XXX XXX";
 export const TELEFONOCLEAN = "900XXXXXX";
 export const WHATSAPP = "34900XXXXXX";
-export const EMAIL = "info@limpiezaincendiosfenix.es";
+export const EMAIL = "info@limpiezadeincendiosfenix.es";
 export const EMPRESA = "Limpiezas de Incendios Fénix";
-export const DOMINIO = "https://limpiezaincendiosfenix.es";
+export const DOMINIO = "https://limpiezadeincendiosfenix.es";

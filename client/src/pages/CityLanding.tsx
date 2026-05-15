@@ -325,7 +325,7 @@ export default function CityLanding({ ciudad }: { ciudad: string }) {
     "@type": "LocalBusiness",
     name: `Limpiezas Fénix ${city.name}`,
     description: `Empresa especializada en limpieza por incendio en ${city.name}. Servicio urgente 24h/365.`,
-    url: `https://limpiezaincendiosfenix.es/limpieza-por-incendio-${ciudad}/`,
+    url: `https://limpiezadeincendiosfenix.es/limpieza-por-incendio-${ciudad}/`,
     areaServed: city.name,
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
@@ -349,9 +349,9 @@ export default function CityLanding({ ciudad }: { ciudad: string }) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://limpiezaincendiosfenix.es/" },
-      { "@type": "ListItem", position: 2, name: "Limpieza por Incendio", item: "https://limpiezaincendiosfenix.es/limpieza-por-incendio/" },
-      { "@type": "ListItem", position: 3, name: `Limpieza por Incendio en ${city.name}`, item: `https://limpiezaincendiosfenix.es/limpieza-por-incendio-${ciudad}/` },
+      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://limpiezadeincendiosfenix.es/" },
+      { "@type": "ListItem", position: 2, name: "Limpieza por Incendio", item: "https://limpiezadeincendiosfenix.es/limpieza-por-incendio/" },
+      { "@type": "ListItem", position: 3, name: `Limpieza por Incendio en ${city.name}`, item: `https://limpiezadeincendiosfenix.es/limpieza-por-incendio-${ciudad}/` },
     ],
   };
 
@@ -360,7 +360,7 @@ export default function CityLanding({ ciudad }: { ciudad: string }) {
       <SEOHead
         title={`Limpieza por Incendio en ${city.name} | Urgente 24h — Limpiezas Fénix`}
         description={`Limpieza por incendio en ${city.name}. Servicio urgente 24h/365. Hollín, humo, olores. Valoración gratuita. Valoración gratuita sin compromiso. ☎ 900 XXX XXX`}
-        canonical={`https://limpiezaincendiosfenix.es/limpieza-por-incendio-${ciudad}/`}
+        canonical={`https://limpiezadeincendiosfenix.es/limpieza-por-incendio-${ciudad}/`}
         schema={[schemaLocalBusiness, schemaFAQ, schemaBreadcrumb]}
       />
 

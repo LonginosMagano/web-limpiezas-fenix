@@ -39,17 +39,17 @@ export default function BlogArticle({ slug }: { slug: string }) {
     description: post.metaDesc,
     datePublished: post.date,
     author: { "@type": "Organization", name: "Limpiezas Fénix" },
-    publisher: { "@type": "Organization", name: "Limpiezas Fénix", url: "https://limpiezaincendiosfenix.es/" },
-    url: `https://limpiezaincendiosfenix.es/blog/${post.slug}/`,
+    publisher: { "@type": "Organization", name: "Limpiezas Fénix", url: "https://limpiezadeincendiosfenix.es/" },
+    url: `https://limpiezadeincendiosfenix.es/blog/${post.slug}/`,
   };
 
   const schemaBreadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://limpiezaincendiosfenix.es/" },
-      { "@type": "ListItem", position: 2, name: "Blog", item: "https://limpiezaincendiosfenix.es/blog/" },
-      { "@type": "ListItem", position: 3, name: post.title, item: `https://limpiezaincendiosfenix.es/blog/${post.slug}/` },
+      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://limpiezadeincendiosfenix.es/" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://limpiezadeincendiosfenix.es/blog/" },
+      { "@type": "ListItem", position: 3, name: post.title, item: `https://limpiezadeincendiosfenix.es/blog/${post.slug}/` },
     ],
   };
 
@@ -60,7 +60,7 @@ export default function BlogArticle({ slug }: { slug: string }) {
       <SEOHead
         title={post.metaTitle}
         description={post.metaDesc}
-        canonical={`https://limpiezaincendiosfenix.es/blog/${post.slug}/`}
+        canonical={`https://limpiezadeincendiosfenix.es/blog/${post.slug}/`}
         schema={[schemaArticle, schemaBreadcrumb]}
       />
 
